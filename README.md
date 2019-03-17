@@ -105,6 +105,6 @@ devtools::install_github("KKPMW/basetheme")
 
 ## Details ##
 
-Under the hood this library utilizes too hooks that are implemented in the `plot.new()` function:
+Under the hood this library utilizes two hooks that are implemented in the `plot.new()` function:
 `before.plot.new` and `plot.new`.
 
