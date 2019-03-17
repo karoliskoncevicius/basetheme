@@ -126,9 +126,9 @@ basetheme_dark <- function() {
 #' @export
 basetheme_minimal <- function() {
   palette <- c("black", "red", "limegreen", "cornflowerblue", "orange")
-  list(fg           = "white",
+  list(fg           = "black",
        adj          = 0.5,
-       ann          = FALSE,
+       ann          = TRUE,
        bg           = "white",
        bty          = "n",
        cex          = 1,
