@@ -5,6 +5,7 @@
 \alias{basetheme_default}
 \alias{basetheme_dark}
 \alias{basetheme_minimal}
+\alias{basetheme_void}
 \title{Theme Functions}
 \usage{
 basetheme_default()
@@ -12,6 +13,8 @@ basetheme_default()
 basetheme_dark()
 
 basetheme_minimal()
+
+basetheme_void()
 }
 \value{
 a list of parameters used by \code{basetheme} along with their settings.
@@ -24,6 +27,7 @@ For now the following themes are implemented:
 1. \code{basetheme_dark()}\cr
 2. \code{basetheme_default()}\cr
 3. \code{basetheme_minimal()}\cr
+4. \code{basetheme_void()}\cr
 
 The used parameters are:
 1) A subset of \code{par} parameters that are most universal to all plots.
