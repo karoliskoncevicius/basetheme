@@ -89,6 +89,36 @@ plot(density(rnorm(100)))
 
 ![ex8](https://i.imgur.com/WdJo0Yp.png)
 
+### Creating a Theme ###
+
+Simplest way is to obtain a default list of values and change them.
+
+Here is an example of creating a grey-ish sheme:
+
+```r
+pars <- basetheme_default()
+pars$palette <- c("black", grey.colors(8))  # numbered colors - shades of grey
+pars$bg  <- "white"                         # some colors
+pars$fg  <- "gray20"                        # some colors
+pars$col <- "gray20"                        # some colors
+pars$col.main <- "black"                    # some colors
+pars$col.axis <- "gray20"                   # some colors
+pars$col.lab  <- "gray20"                   # some colors
+pars$family   <-  "mono"                    # change font
+pars$lab      <-  c(10,10,7)                # more ticks on axes
+pars$cex.axis <-  0.8                       # smaller axis labels
+pars$las      <-  1                         # always horizontal axis labels
+pars$rect.border <- "black"                 # box around the plot
+pars$rect.lwd    <- 4                       # ticker border
+
+basetheme(pars)
+
+barplot(1:9, col=1:9, names=LETTERS[1:9], main="barplot", ylab="heights")
+
+```
+
+![ex9](https://i.imgur.com/qR1T4P7.png)
+
 
 ### Parameter List ###
 
