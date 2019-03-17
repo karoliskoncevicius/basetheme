@@ -97,9 +97,11 @@ plot(1:10)
 
 ## Installation ##
 
-Using `devtools` library:
+Using **devtools** library:
 
-`devtools::install_github("KKPMW/basetheme")`
+```r
+devtools::install_github("KKPMW/basetheme")
+```
 
 ## Details ##
 
