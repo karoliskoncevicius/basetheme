@@ -1,0 +1,10 @@
+Package: basetheme
+Title: Theme management system for the base plotting functions.
+Version: 0.1.0
+Authors@R: person("Karolis", "Koncevičius", email = "karolis.koncevicius@gmail.com", role = c("aut", "cre"))
+Description: Provides a convenient and persistent way to change the graphical parameters of R base plots.
+Depends: R (>= 3.2.2)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
