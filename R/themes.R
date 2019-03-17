@@ -204,7 +204,7 @@ basetheme_void <- function() {
        ljoin        = 0,
        lmitre       = 10,
        lty          = 1,
-       lwd          = 1,
+       lwd          = 2,
        mgp          = c(2,0.5,0),
        pch          = 19,
        tck          = -0.01,
