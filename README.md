@@ -71,6 +71,25 @@ boxplot(iris$Sepal.Width ~ iris$Species, col=3:5)
 
 ![ex4](https://i.imgur.com/KHf34Fi.png)
 
+**Void:**
+
+```r
+basetheme("void")
+boxplot(iris$Sepal.Width ~ iris$Species)
+```
+
+![ex7](https://i.imgur.com/pCZowdY.png)
+
+After some additions:
+
+```r
+basetheme("void", rect.density=10, rect.col="grey", bg="antiquewhite")
+plot(density(rnorm(100)))
+```
+
+![ex8](https://i.imgur.com/WdJo0Yp.png)
+
+
 ### Parameter List ###
 
 To see all set parameters:
