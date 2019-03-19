@@ -7,6 +7,7 @@
 \alias{basetheme_minimal}
 \alias{basetheme_void}
 \alias{basetheme_brutal}
+\alias{basetheme_clean}
 \title{Theme Functions}
 \usage{
 basetheme_default()
@@ -18,6 +19,8 @@ basetheme_minimal()
 basetheme_void()
 
 basetheme_brutal()
+
+basetheme_clean()
 }
 \value{
 a list of parameters used by \code{basetheme} along with their settings.
@@ -27,11 +30,12 @@ A list of available theme functions.
 }
 \details{
 For now the following themes are implemented:
-1. \code{basetheme_dark()}\cr
-2. \code{basetheme_default()}\cr
-3. \code{basetheme_minimal()}\cr
-4. \code{basetheme_brutal()}\cr
-5. \code{basetheme_void()}\cr
+1. \code{basetheme_default()}\cr
+2. \code{basetheme_clean()}\cr
+3. \code{basetheme_brutal()}\cr
+4. \code{basetheme_dark()}\cr
+5. \code{basetheme_minimal()}\cr
+6. \code{basetheme_void()}\cr
 
 The used parameters are:
 1) A subset of \code{par} parameters that are most universal to all plots.
@@ -39,10 +43,12 @@ The used parameters are:
 3) rect.* - \code{rect()} parameters that will be applied to the background of the plotting region.
 }
 \examples{
-  basetheme_dark()
   basetheme_default()
-  basetheme_minimal()
+  basetheme_clean()
   basetheme_brutal()
+  basetheme_dark()
+  basetheme_minimal()
+  basetheme_void()
 
 }
 \seealso{

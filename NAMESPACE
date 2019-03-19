@@ -2,6 +2,7 @@
 
 export(basetheme)
 export(basetheme_brutal)
+export(basetheme_clean)
 export(basetheme_dark)
 export(basetheme_default)
 export(basetheme_minimal)

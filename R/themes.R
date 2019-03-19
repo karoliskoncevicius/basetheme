@@ -3,11 +3,12 @@
 #' A list of available theme functions.
 #'
 #' For now the following themes are implemented:
-#' 1. \code{basetheme_dark()}\cr
-#' 2. \code{basetheme_default()}\cr
-#' 3. \code{basetheme_minimal()}\cr
-#' 4. \code{basetheme_brutal()}\cr
-#' 5. \code{basetheme_void()}\cr
+#' 1. \code{basetheme_default()}\cr
+#' 2. \code{basetheme_clean()}\cr
+#' 3. \code{basetheme_brutal()}\cr
+#' 4. \code{basetheme_dark()}\cr
+#' 5. \code{basetheme_minimal()}\cr
+#' 6. \code{basetheme_void()}\cr
 #'
 #' The used parameters are:
 #' 1) A subset of \code{par} parameters that are most universal to all plots.
@@ -19,10 +20,12 @@
 #' @seealso \code{basetheme}
 #'
 #' @examples
-#'   basetheme_dark()
 #'   basetheme_default()
-#'   basetheme_minimal()
+#'   basetheme_clean()
 #'   basetheme_brutal()
+#'   basetheme_dark()
+#'   basetheme_minimal()
+#'   basetheme_void()
 #'
 #' @author Karolis Koncevičius
 #' @name themes
@@ -275,3 +278,57 @@ basetheme_brutal <- function() {
        )
 }
 
+#' @rdname themes
+#' @export
+basetheme_clean <- function() {
+  palette <- c("#4D4D4D", "#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2",
+               "#DECF3F", "#F17CB0", "#B2912F", "#c29bff", "#fff68f", "#85f9d6",
+               "#a6cc7a", "#8d0808", "#8d7b88", "#461e78", "#f8b1cc", "#800080",
+               "#79c7ad", "#34bdcc", "#c3fbc4", "#baadb5", "#440a4f", "#dfff7b",
+               "#4f61a1", "#4afff0"
+               )
+  list(fg           = "black",
+       adj          = 0.5,
+       ann          = TRUE,
+       bg           = "transparent",
+       bty          = "o",
+       cex          = 1,
+       cex.axis     = 0.7,
+       cex.lab      = 0.8,
+       cex.main     = 1,
+       cex.sub      = 0.8,
+       col          = "black",
+       col.axis     = "black",
+       col.lab      = "black",
+       col.main     = "black",
+       col.sub      = "black",
+       family       = "",
+       font         = 1,
+       font.axis    = 1,
+       font.lab     = 1,
+       font.main    = 2,
+       font.sub     = 3,
+       lab          = c(5, 5, 7),
+       las          = 1,
+       lend         = "round",
+       ljoin        = "round",
+       lmitre       = 10,
+       lty          = "solid",
+       lwd          = 1,
+       mgp          = c(2, 0.5, 0),
+       pch          = 20,
+       tck          = -0.01,
+       xaxs         = "r",
+       xaxt         = "s",
+       xpd          = FALSE,
+       yaxs         = "r",
+       yaxt         = "s",
+       rect.col     = NA,
+       rect.density = numeric(),
+       rect.angle   = 45,
+       rect.lwd     = 1,
+       rect.lty     = 1,
+       rect.border  = NA,
+       palette      = palette
+       )
+}
