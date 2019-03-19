@@ -6,7 +6,8 @@
 #' 1. \code{basetheme_dark()}\cr
 #' 2. \code{basetheme_default()}\cr
 #' 3. \code{basetheme_minimal()}\cr
-#' 4. \code{basetheme_void()}\cr
+#' 4. \code{basetheme_brutal()}\cr
+#' 5. \code{basetheme_void()}\cr
 #'
 #' The used parameters are:
 #' 1) A subset of \code{par} parameters that are most universal to all plots.
@@ -21,6 +22,7 @@
 #'   basetheme_dark()
 #'   basetheme_default()
 #'   basetheme_minimal()
+#'   basetheme_brutal()
 #'
 #' @author Karolis Koncevičius
 #' @name themes
@@ -219,6 +221,56 @@ basetheme_void <- function() {
        rect.lwd     =  1,
        rect.lty     =  1,
        rect.border  =  NA,
+       palette      =  palette
+       )
+}
+
+#' @rdname themes
+#' @export
+basetheme_brutal <- function() {
+  palette <- c("#3b4252", "#bf616a", "#8fa87a", "#5e81ac", "#d08770")
+  list(fg           = "#3b4252",
+       adj          = 0.5,
+       ann          = TRUE,
+       bg           = "white",
+       bty          = "n",
+       cex          = 1,
+       cex.axis     = 1.2,
+       cex.lab      = 1.5,
+       cex.main     = 2,
+       cex.sub      = 1.5,
+       col          = "#3b4252",
+       col.axis     = "#3b4252",
+       col.lab      = "#3b4252",
+       col.main     = "#3b4252",
+       col.sub      = "#3b4252",
+       family       = "mono",
+       font         = 2,
+       font.axis    = 1,
+       font.lab     = 2,
+       font.main    = 2,
+       font.sub     = 2,
+       lab          = c(4,4,7),
+       las          = 1,
+       lend         = 0,
+       ljoin        = 0,
+       lmitre       = 10,
+       lty          = 1,
+       lwd          = 4,
+       mgp          = c(2.5,0.25,0),
+       pch          = 15,
+       tck          = 0,
+       xaxs         = "r",
+       xaxt         = "s",
+       xpd          = FALSE,
+       yaxs         = "r",
+       yaxt         = "s",
+       rect.col     =  NA,
+       rect.density =  numeric(),
+       rect.angle   =  45,
+       rect.lwd     =  8,
+       rect.lty     =  1,
+       rect.border  =  "#3b4252",
        palette      =  palette
        )
 }
