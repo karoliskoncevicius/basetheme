@@ -17,11 +17,7 @@ legend("bottom", legend=unique(iris$Species), fill=unique(iris$Species),
        )
 ```
 
-### Default ###
-
 ![default](https://i.imgur.com/YgXK08y.png)
-
-### Clean ###
 
 ```r
 basetheme("clean")
@@ -29,15 +25,11 @@ basetheme("clean")
 
 ![clean](https://i.imgur.com/po78yol.png)
 
-### Brutal ###
-
 ```r
 basetheme("brutal")
 ```
 
 ![brutal](https://i.imgur.com/Lzs6xOd.png)
-
-### Dark ###
 
 ```r
 basetheme("dark")
@@ -45,15 +37,11 @@ basetheme("dark")
 
 ![dark](https://i.imgur.com/QcIppmc.png)
 
-### Minimal ###
-
 ```r
 basetheme("minimal")
 ```
 
 ![minimal](https://i.imgur.com/g97gvQO.png)
-
-### Void ###
 
 ```r
 basetheme("void")
