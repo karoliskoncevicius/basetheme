@@ -12,8 +12,8 @@ Demonstration using:
 
 ```r
 pairs(iris[,1:4], col=iris$Species)
-legend("bottom", legend=unique(iris$Species), fill=unique(iris$Species), cex=0.8,
-       horiz=TRUE, bty="n", inset=c(0,1), xpd=TRUE
+legend("bottom", legend=unique(iris$Species), fill=unique(iris$Species),
+       cex=0.8, horiz=TRUE, bty="n", inset=c(0,1), xpd=TRUE
        )
 ```
 
@@ -23,21 +23,41 @@ legend("bottom", legend=unique(iris$Species), fill=unique(iris$Species), cex=0.8
 
 ### Clean ###
 
+```r
+basetheme("clean")
+```
+
 ![clean](https://i.imgur.com/po78yol.png)
 
 ### Brutal ###
+
+```r
+basetheme("brutal")
+```
 
 ![brutal](https://i.imgur.com/Lzs6xOd.png)
 
 ### Dark ###
 
+```r
+basetheme("dark")
+```
+
 ![dark](https://i.imgur.com/QcIppmc.png)
 
 ### Minimal ###
 
+```r
+basetheme("minimal")
+```
+
 ![minimal](https://i.imgur.com/g97gvQO.png)
 
 ### Void ###
+
+```r
+basetheme("void")
+```
 
 ![void](https://i.imgur.com/cEBV2QG.png)
 
