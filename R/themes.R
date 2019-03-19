@@ -290,7 +290,7 @@ basetheme_clean <- function() {
   list(fg           = "black",
        adj          = 0.5,
        ann          = TRUE,
-       bg           = "transparent",
+       bg           = "white",
        bty          = "o",
        cex          = 1,
        cex.axis     = 0.7,

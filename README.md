@@ -6,88 +6,85 @@ R package implementing a theming system for base plotting.
 
 The `basetheme()` function provides a way to set and unset R plotting settings.
 
-## Examples ##
+## Themes ##
 
-Loading the library.
-
-
-```r
-library(basetheme)
-```
-
-### Custom clean-ups ###
-
-Default plot:
-
+Demonstration using:
 
 ```r
-plot(iris$Sepal.Length, iris$Sepal.Width)
+pairs(iris[,1:4], col=iris$Species)
+legend("bottom", legend=unique(iris$Species), fill=unique(iris$Species), cex=0.8,
+       horiz=TRUE, bty="n", inset=c(0,1), xpd=TRUE
+       )
 ```
 
-![ex1](https://i.imgur.com/ky5f8Qr.png)
+### Default ###
 
-Some custom improvements:
+![default](https://i.imgur.com/YgXK08y.png)
 
+### Clean ###
+
+![clean](https://i.imgur.com/po78yol.png)
+
+### Brutal ###
+
+![brutal](https://i.imgur.com/Lzs6xOd.png)
+
+### Dark ###
+
+![dark](https://i.imgur.com/QcIppmc.png)
+
+### Minimal ###
+
+![minimal](https://i.imgur.com/g97gvQO.png)
+
+### Void ###
+
+![void](https://i.imgur.com/cEBV2QG.png)
+
+
+## Usage ##
+
+Everything is done by calling the `basetheme()` function.
+There are 5 different modes:
+
+1. Choosing a theme by name
 
 ```r
-basetheme(las=1, tck=-0.01, mgp=c(2,0.7,0), cex.axis=0.7, pch=19, bty="l")
-
-plot(iris$Sepal.Length, iris$Sepal.Width)
+basetheme("clean")
 ```
 
-![ex11](https://i.imgur.com/0MVqglB.png)
-
-### Built-in Themes ###
-
-Using themes provided by the library
-
-**Dark:**
-
+2. Specifying a list with theme values
 
 ```r
-basetheme("dark")
-barplot(1:5, col=1:5, main="barplot", ylab="value")
+theme <- basetheme_clean()
+basetheme(theme)
 ```
 
-![ex2](https://i.imgur.com/EPJElFk.png)
-
-With some customization:
-
+3. Specifying the values directly
 
 ```r
-basetheme(rect.col="grey10")
-pairs(iris[,1:4], cex=0.3, main="iris")
+basetheme(pch=19, bg="blue")
 ```
 
-![ex3](https://i.imgur.com/dhOlU85.png)
-
-**Minimal:**
-
+4. Obtaining parameters for the current theme
 
 ```r
-basetheme("minimal")
-boxplot(iris$Sepal.Width ~ iris$Species, col=3:5)
+basetheme()
 ```
 
-![ex4](https://i.imgur.com/KHf34Fi.png)
-
-**Void:**
+5. Removing all set theme paramters
 
 ```r
-basetheme("void")
-boxplot(iris$Sepal.Width ~ iris$Species)
+basetheme(NULL)
 ```
 
-![ex7](https://i.imgur.com/pCZowdY.png)
-
-After some additions:
+Additional parameters can be specified everytime.
+For example if you like a theme (say "minimal") but would like to change a few parameters:
 
 ```r
-basetheme("void", rect.density=10, rect.col="grey", bg="antiquewhite")
-plot(density(rnorm(100)))
+basetheme("minimal", bg="grey", pch=1)
 ```
 
-![ex8](https://i.imgur.com/WdJo0Yp.png)
 
 ### Creating a Theme ###
 
@@ -119,30 +116,6 @@ barplot(1:9, col=1:9, names=LETTERS[1:9], main="barplot", ylab="heights")
 
 ![ex9](https://i.imgur.com/qR1T4P7.png)
 
-
-### Parameter List ###
-
-To see all set parameters:
-
-```r
-pars <- basetheme()
-```
-
-To obtain all available parametrs with default values:
-
-```r
-basetheme_default()
-```
-
-### Remove All Themes ###
-
-
-```r
-basetheme(NULL)
-plot(1:10)
-```
-
-![ex6](https://i.imgur.com/eIhP3tL.png)
 
 ## Installation ##
 
