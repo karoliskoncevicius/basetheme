@@ -128,7 +128,7 @@ basetheme_dark <- function() {
 #' @rdname themes
 #' @export
 basetheme_minimal <- function() {
-  palette <- c("black", "red", "limegreen", "cornflowerblue", "orange")
+  palette <- c("grey15", "red", "limegreen", "cornflowerblue", "orange")
   list(fg           = "black",
        adj          = 0.5,
        ann          = TRUE,
@@ -144,7 +144,7 @@ basetheme_minimal <- function() {
        col.lab      = "black",
        col.main     = "black",
        col.sub      = "black",
-       family       = "",
+       family       = "serif",
        font         = 1,
        font.axis    = 1,
        font.lab     = 1,
@@ -158,7 +158,7 @@ basetheme_minimal <- function() {
        lty          = 1,
        lwd          = 1,
        mgp          = c(2,0.7,0),
-       pch          = 19,
+       pch          = 20,
        tck          = -0.01,
        xaxs         = "r",
        xaxt         = "s",
@@ -233,7 +233,7 @@ basetheme_brutal <- function() {
        adj          = 0.5,
        ann          = TRUE,
        bg           = "white",
-       bty          = "n",
+       bty          = "o",
        cex          = 1,
        cex.axis     = 1.2,
        cex.lab      = 1.5,
@@ -268,9 +268,9 @@ basetheme_brutal <- function() {
        rect.col     =  NA,
        rect.density =  numeric(),
        rect.angle   =  45,
-       rect.lwd     =  8,
+       rect.lwd     =  4,
        rect.lty     =  1,
-       rect.border  =  "#3b4252",
+       rect.border  =  NA,
        palette      =  palette
        )
 }
