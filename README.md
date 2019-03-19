@@ -12,42 +12,48 @@ Demonstration using:
 
 ```r
 pairs(iris[,1:4], col=iris$Species)
-legend("bottom", legend=unique(iris$Species), fill=unique(iris$Species),
-       cex=0.8, horiz=TRUE, bty="n", inset=c(0,1), xpd=TRUE
+legend("bottom", legend=unique(iris$Species), col=unique(iris$Species),
+       pch=par("pch"), cex=0.8, horiz=TRUE, bty="n", inset=c(0,1), xpd=TRUE
        )
 ```
 
-![default](https://i.imgur.com/YgXK08y.png)
+![default](https://i.imgur.com/aXSfYqW.png)
 
 ```r
 basetheme("clean")
 ```
 
-![clean](https://i.imgur.com/po78yol.png)
+![clean](https://i.imgur.com/I45MqM1.png)
 
 ```r
 basetheme("brutal")
 ```
 
-![brutal](https://i.imgur.com/Lzs6xOd.png)
+![brutal](https://i.imgur.com/xcsMLxN.png)
 
 ```r
 basetheme("dark")
 ```
 
-![dark](https://i.imgur.com/QcIppmc.png)
+![dark](https://i.imgur.com/WlmcFnj.png)
+
+```r
+basetheme("ink")
+```
+
+![ink](https://i.imgur.com/P3d810w.png)
 
 ```r
 basetheme("minimal")
 ```
 
-![minimal](https://i.imgur.com/g97gvQO.png)
+![minimal](https://i.imgur.com/iHPMv5B.png)
 
 ```r
 basetheme("void")
 ```
 
-![void](https://i.imgur.com/cEBV2QG.png)
+![void](https://i.imgur.com/oexLiVW.png)
 
 
 ## Usage ##
