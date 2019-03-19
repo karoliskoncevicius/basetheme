@@ -7,6 +7,7 @@
 #' 2. \code{basetheme_clean()}\cr
 #' 3. \code{basetheme_brutal()}\cr
 #' 4. \code{basetheme_dark()}\cr
+#' 4. \code{basetheme_ink()}\cr
 #' 5. \code{basetheme_minimal()}\cr
 #' 6. \code{basetheme_void()}\cr
 #'
@@ -24,6 +25,7 @@
 #'   basetheme_clean()
 #'   basetheme_brutal()
 #'   basetheme_dark()
+#'   basetheme_ink()
 #'   basetheme_minimal()
 #'   basetheme_void()
 #'
@@ -325,6 +327,58 @@ basetheme_clean <- function() {
        yaxt         = "s",
        rect.col     = NA,
        rect.density = numeric(),
+       rect.angle   = 45,
+       rect.lwd     = 1,
+       rect.lty     = 1,
+       rect.border  = NA,
+       palette      = palette
+       )
+}
+
+#' @rdname themes
+#' @export
+basetheme_ink <- function() {
+  palette <- c("blue", "red", "green4", "darkorange", "purple",
+               "gold", "deeppink2", "lightslategrey"
+               )
+  list(fg           = "blue",
+       adj          = 0.5,
+       ann          = TRUE,
+       bg           = "navajowhite",
+       bty          = "o",
+       cex          = 0.8,
+       cex.axis     = 1,
+       cex.lab      = 1,
+       cex.main     = 1.5,
+       cex.sub      = 1,
+       col          = "blue",
+       col.axis     = "blue",
+       col.lab      = "blue",
+       col.main     = "blue",
+       col.sub      = "blue",
+       family       = "",
+       font         = 3,
+       font.axis    = 3,
+       font.lab     = 4,
+       font.main    = 2,
+       font.sub     = 3,
+       lab          = c(5, 5, 7),
+       las          = 1,
+       lend         = "round",
+       ljoin        = "round",
+       lmitre       = 10,
+       lty          = "dotted",
+       lwd          = 2,
+       mgp          = c(2, 0.5, 0),
+       pch          = 4,
+       tck          = -0.01,
+       xaxs         = "r",
+       xaxt         = "s",
+       xpd          = FALSE,
+       yaxs         = "r",
+       yaxt         = "s",
+       rect.col     = "gray80",
+       rect.density = 10,
        rect.angle   = 45,
        rect.lwd     = 1,
        rect.lty     = 1,

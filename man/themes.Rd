@@ -8,6 +8,7 @@
 \alias{basetheme_void}
 \alias{basetheme_brutal}
 \alias{basetheme_clean}
+\alias{basetheme_ink}
 \title{Theme Functions}
 \usage{
 basetheme_default()
@@ -21,6 +22,8 @@ basetheme_void()
 basetheme_brutal()
 
 basetheme_clean()
+
+basetheme_ink()
 }
 \value{
 a list of parameters used by \code{basetheme} along with their settings.
@@ -34,6 +37,7 @@ For now the following themes are implemented:
 2. \code{basetheme_clean()}\cr
 3. \code{basetheme_brutal()}\cr
 4. \code{basetheme_dark()}\cr
+4. \code{basetheme_ink()}\cr
 5. \code{basetheme_minimal()}\cr
 6. \code{basetheme_void()}\cr
 
@@ -47,6 +51,7 @@ The used parameters are:
   basetheme_clean()
   basetheme_brutal()
   basetheme_dark()
+  basetheme_ink()
   basetheme_minimal()
   basetheme_void()
 
