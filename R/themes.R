@@ -81,7 +81,7 @@ basetheme_default <- function() {
 #' @rdname themes
 #' @export
 basetheme_dark <- function() {
-  palette <- c("white", "red", "limegreen", "cornflowerblue", "orange")
+  palette <- c("antiquewhite2", "red", "limegreen", "cornflowerblue", "orange")
   list(fg           = "white",
        adj          = 0.5,
        ann          = TRUE,
