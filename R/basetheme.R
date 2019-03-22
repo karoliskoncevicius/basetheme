@@ -43,8 +43,9 @@ basetheme <- function(...) {
 
   if(names(pars)[1] == "") {
     if(is.null(pars[[1]])) {
+      palette("default")
       oldpars <- list()
-      pars <- c(list(palette=basetheme_default()$palette), pars[-1])
+      pars <- pars[-1]
     } else if(is.list(pars[[1]])) {
       pars <- c(pars[[1]], pars[-1])
     } else if(is.character(pars[[1]])) {
