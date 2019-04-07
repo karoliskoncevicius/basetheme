@@ -44,6 +44,12 @@ basetheme("ink")
 ![ink](https://i.imgur.com/P3d810w.png)
 
 ```r
+basetheme("subtle")
+```
+
+![ink](https://i.imgur.com/p1pbPLD.png)
+
+```r
 basetheme("minimal")
 ```
 
