@@ -8,6 +8,7 @@
 #' 3. \code{basetheme_brutal()}\cr
 #' 4. \code{basetheme_dark()}\cr
 #' 4. \code{basetheme_ink()}\cr
+#' 5. \code{basetheme_subtle()}\cr
 #' 5. \code{basetheme_minimal()}\cr
 #' 6. \code{basetheme_void()}\cr
 #'
@@ -26,6 +27,7 @@
 #'   basetheme_brutal()
 #'   basetheme_dark()
 #'   basetheme_ink()
+#'   basetheme_subtle()
 #'   basetheme_minimal()
 #'   basetheme_void()
 #'
@@ -379,6 +381,58 @@ basetheme_ink <- function() {
        yaxt         = "s",
        rect.col     = "gray80",
        rect.density = 10,
+       rect.angle   = 45,
+       rect.lwd     = 1,
+       rect.lty     = 1,
+       rect.border  = NA,
+       palette      = palette
+       )
+}
+
+#' @rdname themes
+#' @export
+basetheme_subtle <- function() {
+  palette <- c("#3870C2", "#8AC1D4", "#F2A83B", "#FFFD55", "#66C84D",
+               "#A6EB99", "#DA2E20", "#EB8677", "#8825CB", "#DF89E8"
+               )
+  list(fg           = "#7E848C",
+       adj          = 0.5,
+       ann          = TRUE,
+       bg           = "#2E3947",
+       bty          = "n",
+       cex          = 0.8,
+       cex.axis     = 1,
+       cex.lab      = 1,
+       cex.main     = 1.5,
+       cex.sub      = 1,
+       col          = "#BEBEBE",
+       col.axis     = "#7E848C",
+       col.lab      = "#BEBEBE",
+       col.main     = "#EFF0F2",
+       col.sub      = "#737D89",
+       family       = "",
+       font         = 1,
+       font.axis    = 1,
+       font.lab     = 2,
+       font.main    = 2,
+       font.sub     = 3,
+       lab          = c(5, 5, 7),
+       las          = 1,
+       lend         = "round",
+       ljoin        = "round",
+       lmitre       = 10,
+       lty          = 1,
+       lwd          = 1,
+       mgp          = c(3, 0.7, 0),
+       pch          = 19,
+       tck          = -0.01,
+       xaxs         = "r",
+       xaxt         = "s",
+       xpd          = FALSE,
+       yaxs         = "r",
+       yaxt         = "s",
+       rect.col     = NA,
+       rect.density = numeric(),
        rect.angle   = 45,
        rect.lwd     = 1,
        rect.lty     = 1,
