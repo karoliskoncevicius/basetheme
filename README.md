@@ -47,7 +47,7 @@ basetheme("ink")
 basetheme("subtle")
 ```
 
-![ink](https://i.imgur.com/p1pbPLD.png)
+![ink](https://i.imgur.com/bpwa98x.png)
 
 ```r
 basetheme("minimal")
