@@ -26,7 +26,7 @@
 #'   pairs(iris[,1:4], col=iris$Species)
 #'   basetheme()
 #'   basetheme(NULL)
-#'   dev.off(); plot(1, 1)
+#'   plot(1, 1)
 #'
 #' @author Karolis Koncevičius
 #' @export
