@@ -26,12 +26,12 @@ Further arguments can be provided as \code{parameter=value} pairs.
 See examples.
 }
 \examples{
-  basetheme(basetheme_minimal())
+  basetheme("subtle")
   plot(1)
-  basetheme("dark")
-  plot(1)
-  basetheme("dark", rect.col="grey10")
-  pairs(iris[,1:4])
+  basetheme(basetheme_clean())
+  pairs(iris[,1:4], col=iris$Species)
+  basetheme("clean", rect.col="grey90")
+  pairs(iris[,1:4], col=iris$Species)
   basetheme()
   basetheme(NULL)
   dev.off(); plot(1, 1)
