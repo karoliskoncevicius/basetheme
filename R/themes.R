@@ -2,7 +2,7 @@
 #'
 #' A list of available theme functions.
 #'
-#' For now the following themes are implemented:
+#' The following themes are available:
 #' 1. \code{basetheme_default()}\cr
 #' 2. \code{basetheme_clean()}\cr
 #' 3. \code{basetheme_brutal()}\cr
@@ -12,10 +12,12 @@
 #' 5. \code{basetheme_minimal()}\cr
 #' 6. \code{basetheme_void()}\cr
 #'
-#' The used parameters are:
+#' The parameters used within each theme consists of:
 #' 1) A subset of \code{par} parameters that are most universal to all plots.
 #' 2) "palette" - a vector of colors that will be used when colors are specified by numbers.
 #' 3) rect.* - \code{rect()} parameters that will be applied to the background of the plotting region.
+#'
+#' Call the theme function with no arguments in order to get a full list of available parameters.
 #'
 #' @return a list of parameters used by \code{basetheme} along with their settings.
 #'
