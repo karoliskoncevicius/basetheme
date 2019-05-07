@@ -33,7 +33,7 @@ setParFun <- function(plist) {
   parList[grep("^rect\\.", names(parList))] <- NULL
   function(set=TRUE) {
     if(set)
-      do.call(par, parList)
+      do.call(graphics::par, parList)
     else
       parList
   }
@@ -44,7 +44,7 @@ setPalFun <- function(plist) {
   if(!is.null(plist$palette)) {
     function(set=TRUE) {
       if(set)
-        palette(value=plist$palette)
+        grDevices::palette(value=plist$palette)
       else
         list(palette=plist$palette)
     }
@@ -59,8 +59,8 @@ setRecFun <- function(plist) {
   if(length(plist) > 0) {
     function(set=TRUE) {
       if(set) {
-        rlist <- list(xleft   = par("usr")[1], ybottom=par("usr")[3],
-                      xright  = par("usr")[2], ytop=par("usr")[4],
+        rlist <- list(xleft   = graphics::par("usr")[1], ybottom=graphics::par("usr")[3],
+                      xright  = graphics::par("usr")[2], ytop=graphics::par("usr")[4],
                       col     = ifelse(is.null(plist$rect.col), NA, plist$rect.col),
                       density = ifelse(is.null(plist$rect.density), numeric(), plist$rect.density),
                       angle   = ifelse(is.null(plist$rect.angle), 35, plist$rect.angle),
@@ -68,7 +68,7 @@ setRecFun <- function(plist) {
                       lty     = ifelse(is.null(plist$rect.lty), 1, plist$rect.lty),
                       border  = ifelse(is.null(plist$rect.border), NA, plist$rect.border)
                       )
-        do.call(rect, rlist)
+        do.call(graphics::rect, rlist)
       } else {
         plist
       }

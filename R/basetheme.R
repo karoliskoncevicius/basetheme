@@ -43,7 +43,7 @@ basetheme <- function(...) {
 
   if(names(pars)[1] == "") {
     if(is.null(pars[[1]])) {
-      palette("default")
+      grDevices::palette("default")
       oldpars <- list()
       pars <- pars[-1]
     } else if(is.list(pars[[1]])) {
