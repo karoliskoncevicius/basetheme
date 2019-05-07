@@ -33,8 +33,9 @@ See examples.
   basetheme("clean", rect.col="grey90")
   pairs(iris[,1:4], col=iris$Species)
   basetheme()
-  basetheme(NULL)
   plot(1, 1)
+  basetheme(NULL)
+  dev.off(); plot(1, 1)
 
 }
 \seealso{
