@@ -99,7 +99,7 @@ Additional parameters can be specified everytime.
 For example if you like a theme (say "minimal") but would like to change a few parameters:
 
 ```r
-basetheme("minimal", bg="grey", pch=1)
+settheme("minimal", bg="grey", pch=1)
 ```
 
 
