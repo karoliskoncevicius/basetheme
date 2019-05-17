@@ -44,7 +44,7 @@ The parameters set by this function will take presedence over \code{par()} param
   theme
 
   # Set theme by name
-  basetheme("subtle")
+  basetheme("dark")
   plot(1)
 
   # Reset theme

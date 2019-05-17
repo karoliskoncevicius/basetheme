@@ -34,7 +34,7 @@
 #'   theme
 #'
 #'   # Set theme by name
-#'   basetheme("subtle")
+#'   basetheme("dark")
 #'   plot(1)
 #'
 #'   # Reset theme

@@ -32,22 +32,16 @@ basetheme("brutal")
 ![brutal](https://i.imgur.com/xcsMLxN.png)
 
 ```r
-basetheme("dark")
-```
-
-![dark](https://i.imgur.com/WlmcFnj.png)
-
-```r
 basetheme("ink")
 ```
 
 ![ink](https://i.imgur.com/P3d810w.png)
 
 ```r
-basetheme("subtle")
+basetheme("dark")
 ```
 
-![ink](https://i.imgur.com/bpwa98x.png)
+![dark](https://i.imgur.com/bpwa98x.png)
 
 ```r
 basetheme("minimal")

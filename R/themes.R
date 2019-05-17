@@ -47,55 +47,6 @@ basetheme_default <- function() {
 }
 
 
-basetheme_dark <- function() {
-  palette <- c("antiquewhite2", "red", "limegreen", "cornflowerblue", "orange")
-  list(fg           = "white",
-       adj          = 0.5,
-       ann          = TRUE,
-       bg           = "black",
-       bty          = "o",
-       cex          = 1,
-       cex.axis     = 0.7,
-       cex.lab      = 1,
-       cex.main     = 1.2,
-       cex.sub      = 1,
-       col          = "white",
-       col.axis     = "lightslategrey",
-       col.lab      = "lightslategrey",
-       col.main     = "white",
-       col.sub      = "white",
-       family       = "",
-       font         = 1,
-       font.axis    = 1,
-       font.lab     = 1,
-       font.main    = 2,
-       font.sub     = 2,
-       lab          = c(8,8,7),
-       las          = 1,
-       lend         = 0,
-       ljoin        = 0,
-       lmitre       = 10,
-       lty          = 1,
-       lwd          = 1,
-       mgp          = c(2,0.7,0),
-       pch          = 19,
-       tck          = -0.01,
-       xaxs         = "r",
-       xaxt         = "s",
-       xpd          = FALSE,
-       yaxs         = "r",
-       yaxt         = "s",
-       rect.col     =  NA,
-       rect.density =  numeric(),
-       rect.angle   =  45,
-       rect.lwd     =  1,
-       rect.lty     =  1,
-       rect.border  =  NA,
-       palette      =  palette
-       )
-}
-
-
 basetheme_minimal <- function() {
   palette <- c("grey15", "red", "limegreen", "cornflowerblue", "orange")
   list(fg           = "black",
@@ -348,7 +299,7 @@ basetheme_ink <- function() {
 }
 
 
-basetheme_subtle <- function() {
+basetheme_dark <- function() {
   palette <- c("#3870C2", "#8AC1D4", "#F2A83B", "#FFFD55", "#66C84D",
                "#A6EB99", "#DA2E20", "#EB8677", "#8825CB", "#DF89E8"
                )
@@ -401,11 +352,10 @@ basetheme_subtle <- function() {
 list_themes <- function() {
   c(brutal  = basetheme_brutal,
     clean   = basetheme_clean,
-    dark    = basetheme_dark,
     default = basetheme_default,
     ink     = basetheme_ink,
     minimal = basetheme_minimal,
-    subtle  = basetheme_subtle,
+    dark    = basetheme_dark,
     void    = basetheme_void
     )
 }
