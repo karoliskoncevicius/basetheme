@@ -1,2 +1,1 @@
-export(gettheme)
-export(settheme)
+export(basetheme)

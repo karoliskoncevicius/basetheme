@@ -1,43 +1,61 @@
-#' Set Theme
+#' Theme Control
 #'
-#' Sets themes for base plotting
+#' Sets and returns base plotting theme parameters.
 #'
 #' Function dispatches based on the type of first argument:\cr\cr
-#' 1. No arguments - all theme settings are removed.\cr
+#' 1. No arguments - returns the list of the current theme settings.\cr
 #' 2. NULL - all theme settings are removed.\cr
 #' 3. list - assumed that list stores theme settings.\cr
 #' 4. character - a theme with that name is used.\cr
+#' 5. parameter=value pair - sets the setting for the specified parameter.\cr
 #'
 #' Further arguments can be provided as \code{parameter=value} pairs.
 #' See examples.
+#'
+#' The list of theme parameters is always returned invisibly,
+#' except when function is called with no arguments.
+#'
+#' The parameters set by this function will take presedence over \code{par()} parameters.
 #'
 #' @param ... - a sequence of \code{parameter=value} pairs (see Details).
 #'
 #' @return a list of all theme settings (invisibly, unless no arguments were provided).
 #'
-#' @seealso \code{gettheme()}
-#'
 #' @examples
-#'   settheme("subtle")
-#'   plot(1)
-#'   settheme(gettheme("clean"))
-#'   pairs(iris[,1:4], col=iris$Species)
-#'   settheme("clean", rect.col="grey90")
-#'   pairs(iris[,1:4], col=iris$Species)
+#'   # Set theme by parameters
+#'   basetheme(pch=19, las=1)
 #'   plot(1, 1)
-#'   settheme(NULL)
-#'   dev.off(); plot(1, 1)
+#'
+#'   # Obtain list of theme parameters
+#'   # for the current theme
+#'   basetheme()
+#'   # for a specific theme
+#'   theme <- basetheme("theme")
+#'   theme
+#'
+#'   # Set theme by name
+#'   basetheme("subtle")
+#'   plot(1)
+#'
+#'   # Reset theme
+#'   basetheme(NULL)
+#'
+#'   # Set theme by list
+#'   theme <- basetheme("clean")
+#'   theme$rect.col <- "grey90"
+#'   basetheme(theme)
+#'   pairs(iris[,1:4], col=iris$Species)
 #'
 #' @author Karolis Koncevičius
 #' @export
-settheme <- function(...) {
+basetheme <- function(...) {
 
   if(nargs() == 0) {
-    pars <- list(NULL)
-  } else {
-    pars    <- list(...)
-    oldpars <- current_theme()
+    return(current_theme())
   }
+
+  pars    <- list(...)
+  oldpars <- current_theme()
 
   if(is.null(names(pars))) names(pars) <- rep("", length(pars))
 
@@ -49,7 +67,7 @@ settheme <- function(...) {
     } else if(is.list(pars[[1]])) {
       pars <- c(pars[[1]], pars[-1])
     } else if(is.character(pars[[1]])) {
-      pars <- c(gettheme(pars[[1]]), pars[-1])
+      pars <- c(get_theme(pars[[1]]), pars[-1])
     }
   }
 
@@ -62,7 +80,7 @@ settheme <- function(...) {
     pars <- pars[!duplicated(names(pars), fromLast=TRUE)]
   }
 
-  template <- gettheme("default")
+  template <- get_theme("default")
   if(length(pars) > 0 & any(!names(pars) %in% names(template))) {
     warning("unsupported arguments were discarded")
     pars <- pars[names(pars) %in% names(template)]
@@ -79,5 +97,7 @@ settheme <- function(...) {
   hook <- getHook("plot.new")
   hook$rect <- setRecFun(pars)
   setHook("plot.new", hook, "replace")
+
+  invisible(pars)
 }
 
