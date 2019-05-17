@@ -33,14 +33,14 @@ The parameters set by this function will take presedence over \code{par()} param
 }
 \examples{
   # Set theme by parameters
-  basetheme(pch=19, las=1)
+  basetheme(pch=19, las=1, cex=2)
   plot(1, 1)
 
   # Obtain list of theme parameters
   # for the current theme
   basetheme()
   # for a specific theme
-  theme <- basetheme("theme")
+  theme <- basetheme("brutal")
   theme
 
   # Set theme by name
