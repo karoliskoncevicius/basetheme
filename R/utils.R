@@ -14,18 +14,6 @@ current_theme <- function() {
   theme
 }
 
-
-# function to get theme by name
-get_theme <- function(name) {
-  theme <- get(paste0("basetheme_", name), mode="function")
-  if(is.function(theme)) {
-    theme()
-  } else {
-    stop("no such theme: ", name)
-  }
-}
-
-
 # function to set par settings
 setParFun <- function(plist) {
   parList <- plist

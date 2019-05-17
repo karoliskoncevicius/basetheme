@@ -1,41 +1,3 @@
-#' Theme Functions
-#'
-#' A list of available theme functions.
-#'
-#' The following themes are available:
-#' 1. \code{basetheme_default()}\cr
-#' 2. \code{basetheme_clean()}\cr
-#' 3. \code{basetheme_brutal()}\cr
-#' 4. \code{basetheme_dark()}\cr
-#' 4. \code{basetheme_ink()}\cr
-#' 5. \code{basetheme_subtle()}\cr
-#' 5. \code{basetheme_minimal()}\cr
-#' 6. \code{basetheme_void()}\cr
-#'
-#' The parameters used within each theme consists of:
-#' 1) A subset of \code{par} parameters that are most universal to all plots.
-#' 2) "palette" - a vector of colors that will be used when colors are specified by numbers.
-#' 3) rect.* - \code{rect()} parameters that will be applied to the background of the plotting region.
-#'
-#' Call the theme function with no arguments in order to get a full list of available parameters.
-#'
-#' @return a list of parameters used by \code{basetheme} along with their settings.
-#'
-#' @seealso \code{basetheme}
-#'
-#' @examples
-#'   basetheme_default()
-#'   basetheme_clean()
-#'   basetheme_brutal()
-#'   basetheme_dark()
-#'   basetheme_ink()
-#'   basetheme_subtle()
-#'   basetheme_minimal()
-#'   basetheme_void()
-#'
-#' @author Karolis Koncevičius
-#' @name themes
-#' @export
 basetheme_default <- function() {
   palette <- c("black", "red", "green3", "blue", "cyan", "magenta", "yellow", "gray")
   list(fg           = "black",
@@ -84,8 +46,7 @@ basetheme_default <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_dark <- function() {
   palette <- c("antiquewhite2", "red", "limegreen", "cornflowerblue", "orange")
   list(fg           = "white",
@@ -134,8 +95,7 @@ basetheme_dark <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_minimal <- function() {
   palette <- c("grey15", "red", "limegreen", "cornflowerblue", "orange")
   list(fg           = "black",
@@ -184,8 +144,7 @@ basetheme_minimal <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_void <- function() {
   palette <- c("black", "red", "limegreen")
   list(fg           = "black",
@@ -234,8 +193,7 @@ basetheme_void <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_brutal <- function() {
   palette <- c("#3b4252", "#bf616a", "#8fa87a", "#5e81ac", "#d08770")
   list(fg           = "#3b4252",
@@ -284,8 +242,7 @@ basetheme_brutal <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_clean <- function() {
   palette <- c("#4D4D4D", "#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2",
                "#DECF3F", "#F17CB0", "#B2912F", "#c29bff", "#fff68f", "#85f9d6",
@@ -339,8 +296,7 @@ basetheme_clean <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_ink <- function() {
   palette <- c("blue", "red", "green4", "darkorange", "purple",
                "gold", "deeppink2", "lightslategrey"
@@ -391,8 +347,7 @@ basetheme_ink <- function() {
        )
 }
 
-#' @rdname themes
-#' @export
+
 basetheme_subtle <- function() {
   palette <- c("#3870C2", "#8AC1D4", "#F2A83B", "#FFFD55", "#66C84D",
                "#A6EB99", "#DA2E20", "#EB8677", "#8825CB", "#DF89E8"
@@ -441,4 +396,16 @@ basetheme_subtle <- function() {
        rect.border  = NA,
        palette      = palette
        )
+}
+
+list_themes <- function() {
+  c(brutal  = basetheme_brutal,
+    clean   = basetheme_clean,
+    dark    = basetheme_dark,
+    default = basetheme_default,
+    ink     = basetheme_ink,
+    minimal = basetheme_minimal,
+    subtle  = basetheme_subtle,
+    void    = basetheme_void
+    )
 }
