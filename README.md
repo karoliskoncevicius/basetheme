@@ -4,9 +4,7 @@ R package implementing a theming system for base plotting.
 
 ## Description ##
 
-The `settheme()` function provides a way to set and unset R plotting settings.
-
-The `gettheme()` function returns a list of paramters for the selected theme.
+The `basetheme()` function provides a way to set and unset R plotting settings.
 
 ## Themes ##
 
@@ -22,43 +20,43 @@ legend("bottom", legend=unique(iris$Species), col=unique(iris$Species),
 ![default](https://i.imgur.com/aXSfYqW.png)
 
 ```r
-settheme("clean")
+basetheme("clean")
 ```
 
 ![clean](https://i.imgur.com/I45MqM1.png)
 
 ```r
-settheme("brutal")
+basetheme("brutal")
 ```
 
 ![brutal](https://i.imgur.com/xcsMLxN.png)
 
 ```r
-settheme("dark")
+basetheme("dark")
 ```
 
 ![dark](https://i.imgur.com/WlmcFnj.png)
 
 ```r
-settheme("ink")
+basetheme("ink")
 ```
 
 ![ink](https://i.imgur.com/P3d810w.png)
 
 ```r
-settheme("subtle")
+basetheme("subtle")
 ```
 
 ![ink](https://i.imgur.com/bpwa98x.png)
 
 ```r
-settheme("minimal")
+basetheme("minimal")
 ```
 
 ![minimal](https://i.imgur.com/iHPMv5B.png)
 
 ```r
-settheme("void")
+basetheme("void")
 ```
 
 ![void](https://i.imgur.com/oexLiVW.png)
@@ -66,40 +64,48 @@ settheme("void")
 
 ## Usage ##
 
-Everything is done by calling the `settheme()` function.
+Everything is done by calling the `basetheme()` function.
 There are 4 different modes:
 
 1. Choosing a theme by name
 
 ```r
-settheme("clean")
+basetheme("clean")
 ```
 
 2. Specifying a list with theme values
 
 ```r
-theme <- settheme_clean()
-settheme(theme)
+theme <- basetheme_clean()
+basetheme(theme)
 ```
 
 3. Specifying the values directly
 
 ```r
-settheme(pch=19, bg="blue")
+basetheme(pch=19, bg="blue")
 ```
 
 4. Removing the current theme
 
 ```r
-settheme()
-settheme(NULL)
+basetheme(NULL)
+```
+
+5. Obtaining list of theme parametrs
+
+```r
+# current theme
+basetheme()
+# specified theme
+theme <- basetheme("clean")
 ```
 
 Additional parameters can be specified everytime.
 For example if you like a theme (say "minimal") but would like to change a few parameters:
 
 ```r
-settheme("minimal", bg="grey", pch=1)
+basetheme("minimal", bg="grey", pch=1)
 ```
 
 
@@ -110,7 +116,7 @@ Simplest way is to obtain a default list of values and change them.
 Here is an example of creating a grey-ish sheme:
 
 ```r
-pars <- gettheme("default")
+pars <- basetheme("default")
 pars$palette <- c("black", grey.colors(8))  # numbered colors - shades of grey
 pars$bg  <- "white"                         # some colors
 pars$fg  <- "gray20"                        # some colors
@@ -125,7 +131,7 @@ pars$las      <-  1                         # always horizontal axis labels
 pars$rect.border <- "black"                 # box around the plot
 pars$rect.lwd    <- 4                       # ticker border
 
-settheme(pars)
+basetheme(pars)
 
 barplot(1:9, col=1:9, names=LETTERS[1:9], main="barplot", ylab="heights")
 
