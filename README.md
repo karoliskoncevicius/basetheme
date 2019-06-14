@@ -1,3 +1,7 @@
+[![CRAN version](http://www.r-pkg.org/badges/version/basetheme)](https://cran.r-project.org/package=basetheme)
+[![dependencies](https://tinyverse.netlify.com/badge/basetheme)](https://CRAN.R-project.org/package=basetheme)
+[![Monthly Downloads](https://cranlogs.r-pkg.org/badges/basetheme)](https://cranlogs.r-pkg.org/badges/basetheme)
+
 # basetheme #
 
 R package implementing a theming system for base plotting.
@@ -70,7 +74,9 @@ basetheme("clean")
 2. Specifying a list with theme values
 
 ```r
-theme <- basetheme_clean()
+theme <- basetheme("clean")
+theme$cex.main <- 2
+
 basetheme(theme)
 ```
 
@@ -135,6 +141,12 @@ barplot(1:9, col=1:9, names=LETTERS[1:9], main="barplot", ylab="heights")
 
 
 ## Installation ##
+
+From **CRAN**:
+
+```r
+install.packages("basetheme")
+```
 
 Using **devtools** library:
 
