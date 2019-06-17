@@ -8,7 +8,9 @@ R package implementing a theming system for base plotting.
 
 ## Description ##
 
-The `basetheme()` function provides a way to set and unset R plotting settings.
+The `basetheme()` function provides a **persistent** way to set and unset R plotting settings.
+All the user has to do is set the theme once and it will be consistenlty applied to all the subsequent plots.
+Even after the graphics device is closed.
 
 ## Themes ##
 
