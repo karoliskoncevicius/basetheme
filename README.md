@@ -161,3 +161,15 @@ devtools::install_github("KKPMW/basetheme")
 Under the hood this library utilizes two hooks that are implemented in the `plot.new()` function:
 `before.plot.new` and `plot.new`.
 
+## See Also ##
+
+### Packages ###
+
+CRAN:
+
+1. [**prettyB**](https://github.com/jumpingrivers/prettyB)
+
+GitHub:
+
+1. [**styles**](https://github.com/leehazel/styles)
+
