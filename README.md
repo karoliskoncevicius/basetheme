@@ -50,6 +50,12 @@ basetheme("dark")
 ![dark](https://i.imgur.com/bpwa98x.png)
 
 ```r
+basetheme("deepblue")
+```
+
+![deepblue]("https://i.imgur.com/LlZjS98.png")
+
+```r
 basetheme("minimal")
 ```
 
