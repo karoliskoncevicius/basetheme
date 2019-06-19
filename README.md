@@ -53,7 +53,7 @@ basetheme("dark")
 basetheme("deepblue")
 ```
 
-![deepblue]("https://i.imgur.com/LlZjS98.png")
+![deepblue](https://i.imgur.com/LlZjS98.png)
 
 ```r
 basetheme("minimal")
