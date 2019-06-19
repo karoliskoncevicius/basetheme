@@ -156,6 +156,13 @@ Using **devtools** library:
 devtools::install_github("KKPMW/basetheme")
 ```
 
+To install the **developement version** (stable updates not yet on **CRAN**):
+
+```r
+library(devtools)
+install_github("KKPMW/basetheme", ref="dev")
+```
+
 ## Details ##
 
 Under the hood this library utilizes two hooks that are implemented in the `plot.new()` function:
