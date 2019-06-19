@@ -349,13 +349,62 @@ basetheme_dark <- function() {
        )
 }
 
+basetheme_deepblue <- function() {
+  palette <- c("#42BA90", "#BEE948", "#3A82E4", "#D25D38", "#E9A820", "#9041BA")
+  list(fg           = "#CCCCCC",
+       adj          = 0.5,
+       ann          = TRUE,
+       bg           = "#002E49",
+       bty          = "l",
+       cex          = 1,
+       cex.axis     = 0.8,
+       cex.lab      = 0.8,
+       cex.main     = 1,
+       cex.sub      = 0.8,
+       col          = "#BEBEBE",
+       col.axis     = "#BEBEBE",
+       col.lab      = "#FFFFFF",
+       col.main     = "#FFFFFF",
+       col.sub      = "#326D87",
+       family       = "",
+       font         = 1,
+       font.axis    = 1,
+       font.lab     = 2,
+       font.main    = 2,
+       font.sub     = 3,
+       lab          = c(5, 5, 7),
+       las          = 1,
+       lend         = "round",
+       ljoin        = "round",
+       lmitre       = 10,
+       lty          = 1,
+       lwd          = 1.5,
+       mgp          = c(3, 0.7, 0),
+       pch          = 21,
+       tck          = -0.015,
+       xaxs         = "r",
+       xaxt         = "s",
+       xpd          = FALSE,
+       yaxs         = "r",
+       yaxt         = "s",
+       rect.col     = NA,
+       rect.density = numeric(),
+       rect.angle   = 45,
+       rect.lwd     = 1,
+       rect.lty     = 1,
+       rect.border  = NA,
+       palette      = palette
+       )
+}
+
 list_themes <- function() {
-  c(brutal  = basetheme_brutal,
-    clean   = basetheme_clean,
-    default = basetheme_default,
-    ink     = basetheme_ink,
-    minimal = basetheme_minimal,
-    dark    = basetheme_dark,
-    void    = basetheme_void
+  c(brutal   = basetheme_brutal,
+    clean    = basetheme_clean,
+    default  = basetheme_default,
+    ink      = basetheme_ink,
+    minimal  = basetheme_minimal,
+    dark     = basetheme_dark,
+    deepblue = basetheme_deepblue,
+    void     = basetheme_void
     )
 }
