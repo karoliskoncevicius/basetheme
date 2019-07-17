@@ -1,6 +1,6 @@
 Package: basetheme
 Title: Themes for Base Graphics Plots
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Karolis", "Koncevičius", email = "karolis.koncevicius@gmail.com", role = c("aut", "cre"))
 Maintainer: Karolis Koncevičius <karolis.koncevicius@gmail.com>
 Description: Functions to create and select graphical themes for the base plotting system. Contains: 1) several custom pre-made themes 2) mechanism for creating new themes by making persistent changes to the graphical parameters of base plots.
