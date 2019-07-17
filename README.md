@@ -23,49 +23,55 @@ legend("bottom", legend=unique(iris$Species), col=unique(iris$Species),
        )
 ```
 
-![default](https://i.imgur.com/aXSfYqW.png)
+![default](http://karolis.koncevicius.lt/data/basetheme/default.png)
 
 ```r
 basetheme("clean")
 ```
 
-![clean](https://i.imgur.com/I45MqM1.png)
+![clean](http://karolis.koncevicius.lt/data/basetheme/clean.png)
 
 ```r
 basetheme("brutal")
 ```
 
-![brutal](https://i.imgur.com/xcsMLxN.png)
+![brutal](http://karolis.koncevicius.lt/data/basetheme/brutal.png)
 
 ```r
 basetheme("ink")
 ```
 
-![ink](https://i.imgur.com/P3d810w.png)
+![ink](http://karolis.koncevicius.lt/data/basetheme/ink.png)
 
 ```r
 basetheme("dark")
 ```
 
-![dark](https://i.imgur.com/bpwa98x.png)
+![dark](http://karolis.koncevicius.lt/data/basetheme/dark.png)
 
 ```r
 basetheme("deepblue")
 ```
 
-![deepblue](https://i.imgur.com/8MZkUjh.png)
+![deepblue](http://karolis.koncevicius.lt/data/basetheme/deepblue.png)
+
+```r
+basetheme("royal")
+```
+
+![deepblue](http://karolis.koncevicius.lt/data/basetheme/royal.png)
 
 ```r
 basetheme("minimal")
 ```
 
-![minimal](https://i.imgur.com/iHPMv5B.png)
+![minimal](http://karolis.koncevicius.lt/data/basetheme/minimal.png)
 
 ```r
 basetheme("void")
 ```
 
-![void](https://i.imgur.com/oexLiVW.png)
+![void](http://karolis.koncevicius.lt/data/basetheme/void.png)
 
 
 ## Usage ##
