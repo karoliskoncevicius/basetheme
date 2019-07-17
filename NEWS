@@ -1,0 +1,28 @@
+Package: basetheme
+==================
+
+Version 0.1.1 [2019-07-17]
+
+IMPROVEMENTS
+
+* Removed axis ticks from the "minimal" theme.
+* Adjusted "void" theme to be black and white.
+
+NEW FEATURES
+
+ * Theme: deepblue.
+ * Theme: royal.
+
+
+Version 0.1.0 [2019-06-14]
+
+NEW FEATURES
+
+ * Theme: dark.
+ * Theme: ink.
+ * Theme: brutal.
+ * Theme: clean.
+ * Theme: void.
+ * Theme: minimal.
+ * Theme: default.
+ * Created.
