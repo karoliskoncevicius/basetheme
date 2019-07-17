@@ -97,7 +97,7 @@ basetheme_minimal <- function() {
 
 
 basetheme_void <- function() {
-  palette <- c("black", "grey60", "grey80")
+  palette <- c("black", "grey60", "grey80", "grey95")
   list(fg           = "black",
        adj          = 0.5,
        ann          = FALSE,
