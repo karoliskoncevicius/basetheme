@@ -398,7 +398,7 @@ basetheme_deepblue <- function() {
 }
 
 basetheme_royal <- function() {
-  palette <- c("#B33941", "#7D40AE", "#EE6450", "#0F5AA4", "#04570D", "#FADA5E", "#5A4D41")
+  palette <- c("#1175BB", "#B33941", "#EE6450", "#7D40AE", "#266D1F", "#FADA5E", "#5A4D41")
   list(fg           = "#DACEC4",
        adj          = 0.5,
        ann          = TRUE,
@@ -411,8 +411,8 @@ basetheme_royal <- function() {
        cex.sub      = 0.8,
        col          = "#DACEC4",
        col.axis     = "#DACEC4",
-       col.lab      = "#DACEC4",
-       col.main     = "#DACEC4",
+       col.lab      = "#FFFFFF",
+       col.main     = "#FFFFFF",
        col.sub      = "#DACEC4",
        family       = "serif",
        font         = 1,
@@ -426,7 +426,7 @@ basetheme_royal <- function() {
        ljoin        = "round",
        lmitre       = 10,
        lty          = 1,
-       lwd          = 1.5,
+       lwd          = 1.2,
        mgp          = c(3, 0.7, 0),
        pch          = 21,
        tck          = -0.015,
