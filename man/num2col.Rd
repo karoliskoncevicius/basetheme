@@ -7,7 +7,7 @@
 num2col(x, ..., NAcol = "#B9BBB6", xrange = range(x, na.rm = TRUE))
 }
 \arguments{
-\item{x}{numeric vector}
+\item{x}{numeric vector (factors are transformed to numeric)}
 
 \item{...}{colors to build palette from (defaults to jet colors)}
 

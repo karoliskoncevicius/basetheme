@@ -6,7 +6,7 @@
 #' Main use case is in turning numbers into colors for plots,
 #' especially when different ranges of \code{x} has to be colored differently.
 #'
-#' @param x numeric vector
+#' @param x numeric vector (factors are transformed to numeric)
 #' @param ... colors to build palette from (defaults to jet colors)
 #' @param NAcol color to be used for NA values (defaults to grey)
 #' @param xrange original range of x values (defaults to \range{min(x)})
@@ -24,6 +24,7 @@
 #' @author Karolis Koncevičius
 #' @export
 num2col <- function(x, ..., NAcol="#B9BBB6", xrange=range(x, na.rm=TRUE)) {
+  if(is.factor(x)) x <- as.numeric(x)
   if(length(xrange) != 2) stop('"xrange" must have 2 elements: min and max')
   if(min(x, na.rm=TRUE) < xrange[1]) stop('x has values lower than "xrange[1]"')
   if(max(x, na.rm=TRUE) > xrange[2]) stop('x has values higher than "xrange[2]"')
@@ -37,7 +38,8 @@ num2col <- function(x, ..., NAcol="#B9BBB6", xrange=range(x, na.rm=TRUE)) {
   vals <- vals / (xrange[2]-xrange[1])
 
   ramp <- colorRamp(pal)
-  cols <- rep(NAcol, length(vals))
+  cols <- vals
+  cols[] <- NAcol
   cols[!is.na(vals)] <- rgb(ramp(vals[!is.na(vals)]), maxColorValue=255)
   cols
 }
