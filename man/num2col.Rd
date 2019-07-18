@@ -13,7 +13,7 @@ num2col(x, ..., NAcol = "#B9BBB6", xrange = range(x, na.rm = TRUE))
 
 \item{NAcol}{color to be used for NA values (defaults to grey)}
 
-\item{xrange}{original range of x values (defaults to \range{min(x)})}
+\item{xrange}{original range of x values (defaults to \code{range(x)})}
 }
 \value{
 a vector of colors for each element in x.

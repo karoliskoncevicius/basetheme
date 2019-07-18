@@ -9,7 +9,7 @@
 #' @param x numeric vector (factors are transformed to numeric)
 #' @param ... colors to build palette from (defaults to jet colors)
 #' @param NAcol color to be used for NA values (defaults to grey)
-#' @param xrange original range of x values (defaults to \range{min(x)})
+#' @param xrange original range of x values (defaults to \code{range(x)})
 #'
 #' @return a vector of colors for each element in x.
 #'
