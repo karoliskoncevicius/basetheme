@@ -3,6 +3,10 @@ Package: basetheme
 
 Version 0.1.2 [TBD]
 
+NEW FEATURES
+
+* Function 'num2col' for turning numbers into colors.
+
 IMPROVEMENTS
 
 * Implemented consistent 999-color palettes for all themes.
