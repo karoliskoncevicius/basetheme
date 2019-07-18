@@ -79,18 +79,33 @@ setRecFun <- function(plist) {
 }
 
 # function to create color palette
-createPalette <- function(light, medium, dark) {
+expandPalette <- function(light, medium, dark) {
   stopifnot(length(light)==10)
   stopifnot(length(medium)==10)
   stopifnot(length(dark)==10)
+
+  addTint <- function(col, tint) {
+    rgb(t(col2rgb(col) + (1-tint)*(255-col2rgb(col))), maxColorValue=255)
+  }
+
+  addShade <- function(col, shade) {
+    rgb(t(col2rgb(col) * (1-shade)), maxColorValue=255)
+  }
 
   palette <- medium
   for(i in 1:10) {
     palette[seq(10,90,10)+i] <- colorRampPalette(c(light[i], medium[i], dark[i]))(9)
   }
 
-  for(alpha in seq(0.9,0.1,-0.1)) {
-    palette <- c(palette, adjustcolor(palette[1:100], alpha))
+  for(tint in c(0.25, 0.4, 0.6, 0.8)) {
+    palette <- c(palette, addTint(palette[1:100], tint))
   }
+
+  palette <- c(palette, palette[1:100])
+
+  for(shade in seq(0.1875, 0.75, 0.1875)) {
+    palette <- c(palette, addShade(palette[1:100], shade))
+  }
+
   palette
 }

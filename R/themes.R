@@ -195,10 +195,10 @@ basetheme_brutal <- function() {
 
 
 basetheme_clean <- function() {
-  light   <- c("#DDECF7", "#CFEBD1", "#FEF4A0", "#FDD9AD", "#FAC2C1", "#FAD5E5","#E3CEE3", "#CAAB7E", "#AFAFAF", "#FFFFFF")
+  light   <- c("#5DDAD1", "#80E835", "#FCF705", "#F9B914", "#FA8B7E", "#F5A2DC","#CD93E9", "#AF8548", "#737373", "#F6F5F3")
   medium  <- c("#5DA5DA", "#60BD68", "#FCE205", "#FAA43A", "#F15854", "#F17CB0","#B276B2", "#795C32", "#4D4D4D", "#D6CFC7")
-  dark    <- c("#194A6D", "#2B6831", "#8A7B02", "#A65E04", "#C01410", "#BC145F","#724072", "#342715", "#080808", "#B5A89A")
-  palette <- createPalette(light, medium, dark)
+  dark    <- c("#335AD1", "#3D9344", "#B2A002", "#F36106", "#9F110D", "#C01460","#6E4F8D", "#554123", "#272727", "#B6A99B")
+  palette <- expandPalette(light, medium, dark)
   list(fg           = "black",
        adj          = 0.5,
        ann          = TRUE,
@@ -298,9 +298,10 @@ basetheme_ink <- function() {
 
 
 basetheme_dark <- function() {
-  palette <- c("#3870C2", "#8AC1D4", "#F2A83B", "#FFFD55", "#66C84D",
-               "#A6EB99", "#DA2E20", "#EB8677", "#8825CB", "#DF89E8"
-               )
+  light   <- c("#00FAF1", "#46FE17", "#FFF200", "#EF820D", "#FA8072", "#F987C5", "#9966CB", "#BD9B75", "#FFFFFF", "#48494B")
+  medium  <- c("#3870C2", "#66C84D", "#F2D63B", "#FC6600", "#ED2939", "#FC0FCD", "#8F00FF", "#8A6842", "#BAC1BF", "#222021")
+  dark    <- c("#00008B", "#043927", "#AE8319", "#964000", "#800000", "#B5338A", "#702963", "#492000", "#444C49", "#050505")
+  palette <- expandPalette(light, medium, dark)
   list(fg           = "#7E848C",
        adj          = 0.5,
        ann          = TRUE,
