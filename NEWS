@@ -1,6 +1,13 @@
 Package: basetheme
 ==================
 
+Version 0.1.2 [TBD]
+
+IMPROVEMENTS
+
+* Implemented consistent 999-color palettes for all themes.
+
+
 Version 0.1.1 [2019-07-17]
 
 IMPROVEMENTS
