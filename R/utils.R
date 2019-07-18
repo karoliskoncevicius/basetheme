@@ -78,3 +78,19 @@ setRecFun <- function(plist) {
   }
 }
 
+# function to create color palette
+createPalette <- function(light, medium, dark) {
+  stopifnot(length(light)==10)
+  stopifnot(length(medium)==10)
+  stopifnot(length(dark)==10)
+
+  palette <- medium
+  for(i in 1:10) {
+    palette[seq(10,90,10)+i] <- colorRampPalette(c(light[i], medium[i], dark[i]))(9)
+  }
+
+  for(alpha in seq(0.9,0.1,-0.1)) {
+    palette <- c(palette, adjustcolor(palette[1:100], alpha))
+  }
+  palette
+}

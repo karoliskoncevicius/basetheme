@@ -195,12 +195,10 @@ basetheme_brutal <- function() {
 
 
 basetheme_clean <- function() {
-  palette <- c("#4D4D4D", "#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2",
-               "#DECF3F", "#F17CB0", "#B2912F", "#c29bff", "#fff68f", "#85f9d6",
-               "#a6cc7a", "#8d0808", "#8d7b88", "#461e78", "#f8b1cc", "#800080",
-               "#79c7ad", "#34bdcc", "#c3fbc4", "#baadb5", "#440a4f", "#dfff7b",
-               "#4f61a1", "#4afff0"
-               )
+  light   <- c("#DDECF7", "#CFEBD1", "#FEF4A0", "#FDD9AD", "#FAC2C1", "#FAD5E5","#E3CEE3", "#CAAB7E", "#AFAFAF", "#FFFFFF")
+  medium  <- c("#5DA5DA", "#60BD68", "#FCE205", "#FAA43A", "#F15854", "#F17CB0","#B276B2", "#795C32", "#4D4D4D", "#D6CFC7")
+  dark    <- c("#194A6D", "#2B6831", "#8A7B02", "#A65E04", "#C01410", "#BC145F","#724072", "#342715", "#080808", "#B5A89A")
+  palette <- createPalette(light, medium, dark)
   list(fg           = "black",
        adj          = 0.5,
        ann          = TRUE,
