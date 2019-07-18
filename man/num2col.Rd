@@ -4,17 +4,16 @@
 \alias{num2col}
 \title{Numeric Vector to Color}
 \usage{
-num2col(x, ..., xmin = min(x, na.rm = TRUE), xmax = max(x, na.rm =
-  TRUE))
+num2col(x, ..., NAcol = "#B9BBB6", xrange = range(x, na.rm = TRUE))
 }
 \arguments{
 \item{x}{numeric vector}
 
 \item{...}{colors to build palette from (defaults to jet colors)}
 
-\item{min}{minimum range value (defaults to \code{min(x)})}
+\item{NAcol}{color to be used for NA values (defaults to grey)}
 
-\item{max}{maximum range value (defaults to \code{max(x)})}
+\item{xrange}{original range of x values (defaults to \range{min(x)})}
 }
 \value{
 a vector of colors for each element in x.
@@ -30,7 +29,7 @@ especially when different ranges of \code{x} has to be colored differently.
 \examples{
   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
 
-  cols <- c("cornflowerblue", "orange")
+  cols <- c("lightblue", "cornflowerblue", "orange", "red")
   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
 
   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, "green", "red"), pch=19, cex=2)

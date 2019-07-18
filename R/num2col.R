@@ -8,34 +8,37 @@
 #'
 #' @param x numeric vector
 #' @param ... colors to build palette from (defaults to jet colors)
-#' @param min minimum range value (defaults to \code{min(x)})
-#' @param max maximum range value (defaults to \code{max(x)})
+#' @param NAcol color to be used for NA values (defaults to grey)
+#' @param xrange original range of x values (defaults to \range{min(x)})
 #'
 #' @return a vector of colors for each element in x.
 #'
 #' @examples
 #'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
 #'
-#'   cols <- c("cornflowerblue", "orange")
+#'   cols <- c("lightblue", "cornflowerblue", "orange", "red")
 #'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
 #'
 #'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, "green", "red"), pch=19, cex=2)
 #'
 #' @author Karolis Koncevičius
 #' @export
-num2col <- function(x, ..., xmin=min(x, na.rm=TRUE), xmax=max(x, na.rm=TRUE)) {
-  cols <- c(...)
-  if(length(cols) < 1) {
-    cols <- c("blue", "#007FFF", "cyan", "#7FFF7F", "yellow", "#FF7F00", "red")
+num2col <- function(x, ..., NAcol="#B9BBB6", xrange=range(x, na.rm=TRUE)) {
+  if(length(xrange) != 2) stop('"xrange" must have 2 elements: min and max')
+  if(min(x, na.rm=TRUE) < xrange[1]) stop('x has values lower than "xrange[1]"')
+  if(max(x, na.rm=TRUE) > xrange[2]) stop('x has values higher than "xrange[2]"')
+
+  pal <- c(...)
+  if(length(pal) < 1) {
+    pal <- c("blue", "#007FFF", "cyan", "#7FFF7F", "yellow", "#FF7F00", "red")
   }
 
-  if(min(x, na.rm=TRUE) < xmin) stop('x has values lower than "xmin"')
-  if(max(x, na.rm=TRUE) > xmax) stop('x has values higher than "xmax"')
+  vals <- x - xrange[1]
+  vals <- vals / (xrange[2]-xrange[1])
 
-  vals <- x - xmin
-  vals <- vals / (xmax-xmin)
-
-  ramp <- colorRamp(cols)
-  rgb(ramp(vals), maxColorValue=255)
+  ramp <- colorRamp(pal)
+  cols <- rep(NAcol, length(vals))
+  cols[!is.na(vals)] <- rgb(ramp(vals[!is.na(vals)]), maxColorValue=255)
+  cols
 }
 
