@@ -6,6 +6,7 @@ Version 0.1.2 [TBD]
 NEW FEATURES
 
 * Function 'num2col' for turning numbers into colors.
+* Function 'colshade' for adding shades and tints to colors.
 
 IMPROVEMENTS
 

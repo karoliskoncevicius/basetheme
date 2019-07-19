@@ -44,3 +44,42 @@ num2col <- function(x, ..., NAcol="#B9BBB6", xrange=range(x, na.rm=TRUE)) {
   cols
 }
 
+
+#' Add Shade to Color
+#'
+#' Adds a selected ammount of shade or tint to a vector of colors.
+#'
+#' This function adds shades and tints to provided list of colors.
+#' Shade or tint is decided depending on the sign of the \code{frac} argument:
+#' positive values make colors darker and negative values lighten them.
+#'
+#' @param cols a vector of colors
+#' @param frac a vector of shade fraction (between -1 and 1, defaults to 0)
+#'
+#' @return a vector of colors with added shades or tints.
+#'
+#' @examples
+#'   barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
+#'
+#' @author Karolis Koncevičius
+#' @export
+colshade <- function(cols, frac=0) {
+  if(any(frac < -1 | frac > 1)) stop('"frac" must be between -1 and 1')
+  if(length(frac) <= length(cols)) {
+    frac <- rep_len(frac, length(cols))
+  } else {
+    cols <- rep_len(cols, length(frac))
+  }
+
+  addTint <- function(col, tint) {
+    rgb(t(col2rgb(col)) + tint*t((255-col2rgb(col))), maxColorValue=255)
+  }
+  addShade <- function(col, shade) {
+    rgb(t(col2rgb(col)) * (1-shade), maxColorValue=255)
+  }
+
+  cols[frac <= 0] <- addTint(cols[frac <= 0], -frac[frac <= 0])
+  cols[frac > 0]  <- addShade(cols[frac > 0], frac[frac > 0])
+  cols
+}
+
