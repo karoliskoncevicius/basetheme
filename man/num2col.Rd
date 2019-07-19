@@ -4,7 +4,8 @@
 \alias{num2col}
 \title{Numeric Vector to Color}
 \usage{
-num2col(x, ..., NAcol = "#B9BBB6", xrange = range(x, na.rm = TRUE))
+num2col(x, ..., NAcol = "#B9BBB6", min = base::min(x, na.rm = TRUE),
+  max = base::max(x, na.rm = TRUE))
 }
 \arguments{
 \item{x}{numeric vector (factors are transformed to numeric)}
@@ -13,7 +14,9 @@ num2col(x, ..., NAcol = "#B9BBB6", xrange = range(x, na.rm = TRUE))
 
 \item{NAcol}{color to be used for NA values (defaults to grey)}
 
-\item{xrange}{original range of x values (defaults to \code{range(x)})}
+\item{min}{lowest value of transformed vector (defaults to \code{min(x)})}
+
+\item{max}{highest value of transformed vector (defaults to \code{max(x)})}
 }
 \value{
 a vector of colors for each element in x.
@@ -25,9 +28,16 @@ Returns interpolated colors for a specified numeric vector.
 This function interpolates a given set of colors to a numeric vector.
 Main use case is in turning numbers into colors for plots,
 especially when different ranges of \code{x} has to be colored differently.
+
+Color of NA values and values outside of specified interval can be set using
+\code{NAcol} argument. Set this to NA to omit the display of such values.
 }
 \examples{
   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
+
+  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, min=20), pch=19, cex=2)
+
+  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, min=20, NAcol=NA), pch=19, cex=2)
 
   cols <- c("lightblue", "cornflowerblue", "orange", "red")
   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
