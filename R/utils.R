@@ -32,10 +32,12 @@ setParFun <- function(plist) {
   parList$palette <- NULL
   parList[grep("^rect\\.", names(parList))] <- NULL
   function(set=TRUE) {
-    if(set)
+    if(set) {
+      parList$new <- graphics::par('new')
       do.call(graphics::par, parList)
-    else
+    } else {
       parList
+    }
   }
 }
 
