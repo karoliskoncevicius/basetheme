@@ -31,16 +31,25 @@
 #'
 #' @author Karolis Koncevičius
 #' @export
-num2col <- function(x, ..., NAcol="#B9BBB6",
-                    min=base::min(x, na.rm=TRUE), max=base::max(x, na.rm=TRUE)
-                    ) {
+num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
   if(is.factor(x)) x <- as.numeric(x)
 
-  pal <- c(...)
-  if(length(pal) < 1) {
+  if(missing(pal)) {
+    pal <- basetheme()$palette.numbers
+  }
+  if(is.null(pal)) {
     pal <- c("blue", "#007FFF", "cyan", "#7FFF7F", "yellow", "#FF7F00", "red")
   }
 
+  if(missing(NAcol)) {
+    NAcol <- basetheme()$palette.missing
+  }
+  if(is.null(NAcol)) {
+    NAcol <- "#B9BBB6"
+  }
+
+  min <- min(ref, na.rm=TRUE)
+  max <- max(ref, na.rm=TRUE)
   x[x < min | x > max] <- NA
   x <- x - min
   x <- x / (max-min)
