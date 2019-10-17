@@ -1,7 +1,7 @@
 Package: basetheme
 ==================
 
-Version 0.1.2 [TBD]
+Version 0.1.2 [2019-10-17]
 
 NEW FEATURES
 
@@ -14,20 +14,20 @@ IMPROVEMENTS
 
 BUG FIXES
 
- * Fixed a bug that ingnored par(new=TRUE).
+ * Fixed a bug that ignored par(new=TRUE).
 
 
 Version 0.1.1 [2019-07-17]
-
-IMPROVEMENTS
-
- * Removed axis ticks from the "minimal" theme.
- * Adjusted "void" theme to be black and white.
 
 NEW FEATURES
 
  * Theme: deepblue.
  * Theme: royal.
+
+IMPROVEMENTS
+
+ * Removed axis ticks from the "minimal" theme.
+ * Adjusted "void" theme to be black and white.
 
 
 Version 0.1.0 [2019-06-14]
