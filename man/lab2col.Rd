@@ -32,6 +32,10 @@ Color of NA values and values outside of specified reference can be set using
 \code{ref} parameter can be specified to select the order of color assignment:
 first element from \code{ref} will be assigned the first color from \code{pal},
 second element - second color, and so on.
+
+The list of provided colors is expanded by first adding shades and then adding
+tints. However if the number of groups exceeds the number of provided colors
+by more than 3 times the colors will be repeated.
 }
 \examples{
  pairs(iris[,1:4], col=lab2col(iris$Species))

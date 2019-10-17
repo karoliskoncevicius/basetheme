@@ -75,6 +75,10 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 #' first element from \code{ref} will be assigned the first color from \code{pal},
 #' second element - second color, and so on.
 #'
+#' The list of provided colors is expanded by first adding shades and then adding
+#' tints. However if the number of groups exceeds the number of provided colors
+#' by more than 3 times the colors will be repeated.
+#'
 #' @param x vector of labels (always transformed to character)
 #' @param pal colors used to build the palette (defaults to colors set by theme)
 #' @param ref reference for assigning colors (defaults to elements of \code{x})
@@ -118,7 +122,12 @@ lab2col <- function(x, pal, ref=x, NAcol) {
     NAcol <- "#B9BBB6"
   }
 
+  pal <- rep_len(pal, length(pal) * 3)
+  pal <- colshade(pal, rep(c(0, 0.5, -0.5), each=length(pal)/3))
+
   vals <- unique(ref)
+  if(length(vals) > length(pal))
+    warning("number of unique values exceeds the number of colors in the palette by more than 3 times")
   pal  <- rep_len(pal, length(vals))
   cols <- pal[match(x, vals)]
 
