@@ -61,7 +61,7 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
     NAcol <- "#B9BBB6"
   }
 
-  ramp <- colorRamp(pal)
+  ramp <- grDevices::colorRamp(pal)
   min <- min(ref, na.rm=TRUE)
   max <- max(ref, na.rm=TRUE)
 
@@ -73,7 +73,7 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 
     cols <- x
     cols[] <- NAcol
-    cols[!is.na(x)] <- rgb(ramp(x[!is.na(x)]), maxColorValue=255)
+    cols[!is.na(x)] <- grDevices::rgb(ramp(x[!is.na(x)]), maxColorValue=255)
     cols
   }
 
@@ -195,10 +195,10 @@ colshade <- function(cols, frac=0) {
   }
 
   addTint <- function(col, tint) {
-    rgb(t(col2rgb(col)) + tint*t((255-col2rgb(col))), maxColorValue=255)
+    grDevices::rgb(t(grDevices::col2rgb(col)) + tint*t((255-grDevices::col2rgb(col))), maxColorValue=255)
   }
   addShade <- function(col, shade) {
-    rgb(t(col2rgb(col)) * (1-shade), maxColorValue=255)
+    grDevices::rgb(t(grDevices::col2rgb(col)) * (1-shade), maxColorValue=255)
   }
 
   cols[frac <= 0] <- addTint(cols[frac <= 0], -frac[frac <= 0])
