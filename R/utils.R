@@ -43,12 +43,13 @@ setParFun <- function(plist) {
 
 # function to set palette settings
 setPalFun <- function(plist) {
+  plist <- plist[grep("^palette\\.?", names(plist))]
   if(!is.null(plist$palette)) {
     function(set=TRUE) {
       if(set)
         grDevices::palette(value=plist$palette)
       else
-        list(palette=plist$palette)
+        plist
     }
   } else {
     NULL

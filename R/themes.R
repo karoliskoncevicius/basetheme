@@ -47,9 +47,9 @@ basetheme_default <- function() {
        rect.lty        = 1,
        rect.border     = NA,
        palette         = palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
@@ -96,16 +96,16 @@ basetheme_minimal <- function() {
        xpd             = FALSE,
        yaxs            = "r",
        yaxt            = "s",
-       rect.col        =  NA,
-       rect.density    =  numeric(),
-       rect.angle      =  45,
-       rect.lwd        =  1,
-       rect.lty        =  1,
-       rect.border     =  NA,
-       palette         =  palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       rect.col        = NA,
+       rect.density    = numeric(),
+       rect.angle      = 45,
+       rect.lwd        = 1,
+       rect.lty        = 1,
+       rect.border     = NA,
+       palette         = palette,
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
   )
 }
 
@@ -152,16 +152,16 @@ basetheme_void <- function() {
        xpd             = FALSE,
        yaxs            = "r",
        yaxt            = "n",
-       rect.col        =  NA,
-       rect.density    =  numeric(),
-       rect.angle      =  45,
-       rect.lwd        =  1,
-       rect.lty        =  1,
-       rect.border     =  NA,
-       palette         =  palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       rect.col        = NA,
+       rect.density    = numeric(),
+       rect.angle      = 45,
+       rect.lwd        = 1,
+       rect.lty        = 1,
+       rect.border     = NA,
+       palette         = palette,
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
@@ -215,9 +215,9 @@ basetheme_clean <- function() {
        rect.lty        = 1,
        rect.border     = NA,
        palette         = palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
@@ -264,19 +264,18 @@ basetheme_brutal <- function() {
        xpd             = FALSE,
        yaxs            = "r",
        yaxt            = "s",
-       rect.col        =  NA,
-       rect.density    =  numeric(),
-       rect.angle      =  45,
-       rect.lwd        =  4,
-       rect.lty        =  1,
-       rect.border     =  NA,
-       palette         =  palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       rect.col        = NA,
+       rect.density    = numeric(),
+       rect.angle      = 45,
+       rect.lwd        = 4,
+       rect.lty        = 1,
+       rect.border     = NA,
+       palette         = palette,
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
-
 
 
 basetheme_ink <- function() {
@@ -328,9 +327,9 @@ basetheme_ink <- function() {
        rect.lty        = 1,
        rect.border     = NA,
        palette         = palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
@@ -384,9 +383,9 @@ basetheme_dark <- function() {
        rect.lty        = 1,
        rect.border     = NA,
        palette         = palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
@@ -439,9 +438,9 @@ basetheme_deepblue <- function() {
        rect.lty        = 1,
        rect.border     = NA,
        palette         = palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
@@ -451,6 +450,8 @@ basetheme_royal <- function() {
   palette_numbers <- c("#1175BB", "#5097A4", "#4AC6AE", "#88BE6D", "#E4CD05", "#EF7215", "#B33941")
   palette_labels  <- c("#7852A9", "#E93FBC", "#B33941", "#1175BB", "#2E8B57", "#DBA520", "#EF7215", "#4AC6AE", "#997950", "#E27069")
   palette_missing <- "#777B7E"
+
+  palette <- c("#1175BB", "#B33941", "#EE6450", "#7D40AE", "#266D1F", "#FADA5E", "#5A4D41")
 
   list(fg              = "#DACEC4",
        adj             = 0.5,
@@ -495,9 +496,9 @@ basetheme_royal <- function() {
        rect.lty        = 1,
        rect.border     = NA,
        palette         = palette,
-       palette.numbers =  palette_numbers,
-       palette.labels  =  palette_labels,
-       palette.missing =  palette_missing
+       palette.numbers = palette_numbers,
+       palette.labels  = palette_labels,
+       palette.missing = palette_missing
        )
 }
 
