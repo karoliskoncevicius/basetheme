@@ -46,29 +46,52 @@ See documentation: `help(basetheme)`, `help(num2col)`, `help(lab2col)` and examp
 
 A few examples using of how it all works together.
 
-| Colored by scale (theme = royal)                                       |  Colored by label (theme = deepblue)                                   |
-|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `basetheme("royal")`                                                   | `basetheme("deepblue")`                                                |
-| `pairs(iris[-5], bg=num2col(iris[,1]), col=0)`                         | `pairs(iris[-5], bg=lab2col(iris$Species), col=0)`                     |
-| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_11.png)   | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_12.png)   |
+```r
+basetheme("void")
+plot(density(iris$Petal.Length))
+```
 
-| Dendrogram (theme = brutal)                                            |  Dendrogram (theme = ink)                                              |
-|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `basetheme("brutal")`                                                  | `basetheme("ink")`                                                     |
-| `plot(hclust(dist(USArrests), "ward.D2"), hang=-1)`                    | `plot(hclust(dist(USArrests), "ward.D2"), hang=-1)`                    |
-| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_21.png)   | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_22.png)   |
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1.png)
 
-| Barplot colored by scale (theme = clean)                               |  Barplot colored by scale up to 1000 (theme = dark)                    |
-|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `basetheme("clean")`                                                   | `basetheme("dark")`                                                    |
-| `barplot(rivers, col=num2col(rivers))`                                 | `barplot(rivers, col=num2col(rivers, ref=1:1000))`                     |
-| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_31.png)   | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_32.png)   |
+```r
+basetheme("clean")
+barplot(rivers, col=num2col(rivers))
+```
 
-| Scatter plot (theme = minimal)                                         |  Scatter plot (theme = void)                                           |
-|------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `basetheme("clean")`                                                   | `basetheme("void")`                                                    |
-| `plot(1:10, col=num2col(1:10, "red"), cex=2)`                          | `plot(1:10, col=num2col(1:10, "red"), cex=2)`                          |
-| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_41.png)   | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_42.png)   |
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_2.png)
+
+```r
+basetheme("brutal")
+plot(hclust(dist(USArrests), "ward.D2"), hang=-1)
+```
+
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3.png)
+
+```r
+basetheme("royal")
+pairs(iris[-5], bg=lab2col(iris$Species), col=0)
+```
+
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4.png)
+
+```r
+basetheme("deepblue")
+pairs(iris[-5], bg=num2col(iris[,1]), col=0)
+```
+
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_5.png)
+
+```r
+x <- seq(-1.95, 1.95, length = 30)
+y <- seq(-1.95, 1.95, length = 35)
+z <- outer(x, y, function(a, b) a*b^2)
+
+basetheme("dark")
+persp(x, y, z, theta=-45)
+```
+
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_6.png)
+
 
 ## More Details ##
 
