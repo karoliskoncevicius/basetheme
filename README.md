@@ -48,10 +48,10 @@ A few examples using of how it all works together.
 
 ```r
 basetheme("void")
-plot(density(iris$Petal.Length))
+boxplot(split(iris$Sepal.Width, iris$Species))
 ```
 
-![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1.png)
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1a.png)
 
 ```r
 basetheme("clean")
