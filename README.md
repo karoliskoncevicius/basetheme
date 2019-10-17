@@ -72,14 +72,14 @@ basetheme("royal")
 pairs(iris[-5], bg=lab2col(iris$Species), col=0)
 ```
 
-![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4.png)
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4a.png)
 
 ```r
 basetheme("deepblue")
 pairs(iris[-5], bg=num2col(iris[,1]), col=0)
 ```
 
-![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_5.png)
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_5a.png)
 
 ```r
 x <- seq(-1.95, 1.95, length = 30)
@@ -90,7 +90,7 @@ basetheme("dark")
 persp(x, y, z, theta=-45)
 ```
 
-![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_6.png)
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_6a.png)
 
 
 ## More Details ##
