@@ -26,8 +26,10 @@ This function interpolates a given set of colors to a numeric vector.
 Main use case is in turning numbers into colors for plots,
 especially when different ranges of \code{x} have to be colored differently.
 
-Color of NA values and values outside of \code{ref} range can be set using
-\code{NAcol} argument. Set this to NA to omit the display of such values.
+Color of NA values and values outside of \code{ref} range can be set using \code{NAcol} argument.
+Set this to NA to omit the display of such values.
+
+In case only a single color is provided - it is expanded by using tints and shades.
 }
 \examples{
  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)

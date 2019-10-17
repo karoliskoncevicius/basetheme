@@ -6,8 +6,10 @@
 #' Main use case is in turning numbers into colors for plots,
 #' especially when different ranges of \code{x} have to be colored differently.
 #'
-#' Color of NA values and values outside of \code{ref} range can be set using
-#' \code{NAcol} argument. Set this to NA to omit the display of such values.
+#' Color of NA values and values outside of \code{ref} range can be set using \code{NAcol} argument.
+#' Set this to NA to omit the display of such values.
+#'
+#' In case only a single color is provided - it is expanded by using tints and shades.
 #'
 #' @param x numeric vector (factors are transformed to numeric)
 #' @param pal colors used to build the palette (defaults to colros set by theme)
@@ -38,6 +40,10 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
   }
   if(is.null(pal)) {
     pal <- c("blue", "#007FFF", "cyan", "#7FFF7F", "yellow", "#FF7F00", "red")
+  }
+
+  if(length(pal) == 1) {
+    pal <- colshade(pal, c(-0.8, -0.5, -0.3, 0, 0.3, 0.5, 0.8))
   }
 
   if(missing(NAcol)) {
