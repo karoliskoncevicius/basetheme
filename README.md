@@ -44,13 +44,31 @@ See documentation: `help(basetheme)`, `help(num2col)`, `help(lab2col)` and examp
 
 ## Some Examples ##
 
-A few examples using `iris` dataset for how it all works together.
+A few examples using of how it all works together.
 
-| Colored by scale (theme = royal)                       |  Colored by label (theme = deepblue)               |
-|--------------------------------------------------------|----------------------------------------------------|
-| basetheme("royal")                                     | basetheme("deepblue")                              |
-| pairs(iris[,1:4], bg=num2col(iris$Sepal.Width), col=0) | pairs(iris[,1:4], bg=lab2col(iris$Species), col=0) |
-| ![](https://camo.githubusercontent.com/97ac10e27e48e4482312d5fda34910736dc18393/687474703a2f2f6b61726f6c69732e6b6f6e63657669636975732e6c742f646174612f626173657468656d652f62727574616c2e706e67)                                                  | ![](https://camo.githubusercontent.com/97ac10e27e48e4482312d5fda34910736dc18393/687474703a2f2f6b61726f6c69732e6b6f6e63657669636975732e6c742f646174612f626173657468656d652f62727574616c2e706e67)                                              |
+| Colored by scale (theme = royal)                                       |  Colored by label (theme = deepblue)                                   |
+|------------------------------------------------------------------------|------------------------------------------------------------------------|
+| `basetheme("royal")`                                                   | `basetheme("deepblue")`                                                |
+| `pairs(iris[,1:4], bg=num2col(iris$Sepal.Width), col=0)`               | `pairs(iris[,1:4], bg=lab2col(iris$Species), col=0)`                   |
+| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1_2.png)  |
+
+| Dendrogram (theme = brutal)                                            |  Dendrogram (theme = ink)                                              |
+|------------------------------------------------------------------------|------------------------------------------------------------------------|
+| `basetheme("brutal")`                                                  | `basetheme("ink")`                                                     |
+| `plot(hclust(dist(USArrests), "ward.D2"), hang=-1)`                    | `plot(hclust(dist(USArrests), "ward.D2"), hang=-1)`                    |
+| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_2_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_2_2.png)  |
+
+| Barplot colored by scale (theme = clean)                               |  Barplot colored by scale up to 1000 (theme = dark)                    |
+|------------------------------------------------------------------------|------------------------------------------------------------------------|
+| `basetheme("clean")`                                                   | `basetheme("dark")`                                                    |
+| `barplot(rivers, col=num2col(rivers))`                                 | `barplot(rivers, col=num2col(rivers, ref=1:1000))`                     |
+| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3_2.png)  |
+
+| Density plot (theme = minimal)                                         |  Density plot (theme = void)                                           |
+|------------------------------------------------------------------------|------------------------------------------------------------------------|
+| `basetheme("minimal")`                                                 | `basetheme("void")`                                                    |
+| `plot(density(iris$Petal.Length))`                                     | `plot(density(iris$Petal.Length))`                                     |
+| ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4_2.png)  |
 
 ## More Details ##
 
