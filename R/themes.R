@@ -58,7 +58,7 @@ basetheme_minimal <- function() {
   palette         <- c("#4D4D4D", "#F15854", "#60BD68", "#5DA5DA", "#66E3D9", "#B276B2", "#DECF3F", "#B4B4B4", "#FAA43A", "#8D4B08")
   palette_numbers <- c("#4F61A1", "#5DA5DA", "#66E3D9", "#7FFF7F", "#FFF25C", "#FAA43A", "#F15854")
   palette_labels  <- c("#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2", "#8D4B08", "#DECF3F", "#F17CB0", "#66E3D9", "#00FF7F")
-  palette_missing <- "#8D4B08"
+  palette_missing <- "#B4B4B4"
 
   list(fg              = "black",
        adj             = 0.5,
@@ -114,7 +114,7 @@ basetheme_void <- function() {
   palette         <- c("#4D4D4D", "#F15854", "#60BD68", "#5DA5DA", "#66E3D9", "#B276B2", "#DECF3F", "#B4B4B4", "#FAA43A", "#8D4B08")
   palette_numbers <- c("#4F61A1", "#5DA5DA", "#66E3D9", "#7FFF7F", "#FFF25C", "#FAA43A", "#F15854")
   palette_labels  <- c("#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2", "#8D4B08", "#DECF3F", "#F17CB0", "#66E3D9", "#00FF7F")
-  palette_missing <- "#8D4B08"
+  palette_missing <- "#B4B4B4"
 
   list(fg              = "black",
        adj             = 0.5,
@@ -170,7 +170,7 @@ basetheme_clean <- function() {
   palette         <- c("#4D4D4D", "#F15854", "#60BD68", "#5DA5DA", "#66E3D9", "#B276B2", "#DECF3F", "#B4B4B4", "#FAA43A", "#8D4B08")
   palette_numbers <- c("#4F61A1", "#5DA5DA", "#66E3D9", "#7FFF7F", "#FFF25C", "#FAA43A", "#F15854")
   palette_labels  <- c("#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2", "#8D4B08", "#DECF3F", "#F17CB0", "#66E3D9", "#00FF7F")
-  palette_missing <- "#8D4B08"
+  palette_missing <- "#B4B4B4"
 
   list(fg              = "black",
        adj             = 0.5,
