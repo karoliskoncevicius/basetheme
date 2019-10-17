@@ -22,19 +22,21 @@
 #' @return a vector of colors for each element in \code{x} or, when \code{x} is missing, a function.
 #'
 #' @examples
-#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
+#'  # color numbers by y-axos
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19)
 #'
-#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20, 35)), pch=19, cex=2)
+#'  # color only a certain range
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20, 35)), pch=19)
 #'
-#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20,35), NAcol=NA), pch=19, cex=2)
+#'  # hide the out of range values
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20,35), NAcol=NA))
 #'
-#'  cols <- c("lightblue", "cornflowerblue", "orange", "red")
-#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
+#'  # iris example
+#'  pairs(iris[,-5], col=num2col(iris$Sepal.Length))
 #'
-#'  # using a prepared coloring function (that colors values in the range of 0-10)
+#'  # same butusing a prepared coloring function (for values in range 0-10)
 #'  color <- num2col(ref=c(0,10))
-#'  plot(mtcars$hp, mtcars$mtcars, col=color(mtcars$cyl), pch=19)
-#'  legend("topleft", legend=sort(unique(mtcars$cyl)), fill=color(sort(unique(mtcars$cyl))), title="cylinders")
+#'  pairs(iris[,-5], col=color(iris$Sepal.Length))
 #'
 #' @seealso \code{lab2col}
 #'
@@ -112,19 +114,14 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 #' @return a vector of colors for each element in \code{x} or, when \code{x} is missing, a function.
 #'
 #' @examples
+#'  # iris example
 #'  pairs(iris[,1:4], col=lab2col(iris$Species))
 #'
-#'  labs1 <- c("A", "B", "C", "D", "E")
-#'  labs2 <- c("D", "C", "E", "A", "B")
-#'  labs3 <- c("A", "A", "C", "F", "B")
-#'  par(mfrow=c(2,2))
-#'  barplot(1:5, names=labs1, col=lab2col(labs1))
-#'  barplot(1:5, names=labs2, col=lab2col(labs2, ref=labs1))                # color orders are preserved
-#'  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1))                # new levels are treated as missing
-#'  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1, NAcol="black")) # "missing" color can be adjusted
+#'  # iris example with one group missing from reference
+#'  pairs(iris[,1:4], col=lab2col(iris$Species, ref=c("setosa", "versicolor")))
 #'
 #'  # example of using a coloring function
-#'  # the "color" function created below will always know what colors to assign to the values provided in the "ref"
+#'  # "color" function below will consistently assign colors to values in "ref".
 #'  color <- lab2col(ref=unique(chickwts$feed))
 #'  par(mfrow=c(1,2))
 #'  means <- tapply(chickwts$weight, chickwts$feed, mean)
@@ -187,9 +184,6 @@ lab2col <- function(x, pal, ref=x, NAcol) {
 #' @param frac a vector of shade fractions (between -1 and 1, defaults to 0)
 #'
 #' @return a vector of colors with added shades or tints.
-#'
-#' @examples
-#'  barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
 #'
 #' @author Karolis Koncevičius
 colshade <- function(cols, frac=0) {

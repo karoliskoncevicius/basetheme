@@ -35,19 +35,21 @@ When \code{x} is not specified - a function that generates colors based on
 \code{pal} and \code{ref} is returned.
 }
 \examples{
- plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
+ # color numbers by y-axos
+ plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19)
 
- plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20, 35)), pch=19, cex=2)
+ # color only a certain range
+ plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20, 35)), pch=19)
 
- plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20,35), NAcol=NA), pch=19, cex=2)
+ # hide the out of range values
+ plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20,35), NAcol=NA))
 
- cols <- c("lightblue", "cornflowerblue", "orange", "red")
- plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
+ # iris example
+ pairs(iris[,-5], col=num2col(iris$Sepal.Length))
 
- # using a prepared coloring function (that colors values in the range of 0-10)
+ # same butusing a prepared coloring function (for values in range 0-10)
  color <- num2col(ref=c(0,10))
- plot(mtcars$hp, mtcars$mtcars, col=color(mtcars$cyl), pch=19)
- legend("topleft", legend=sort(unique(mtcars$cyl)), fill=color(sort(unique(mtcars$cyl))), title="cylinders")
+ pairs(iris[,-5], col=color(iris$Sepal.Length))
 
 }
 \seealso{

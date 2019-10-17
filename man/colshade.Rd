@@ -22,10 +22,6 @@ This function adds shades and tints to provided list of colors.
 Shade or tint is decided depending on the sign of the \code{frac} argument:
 positive values make colors darker and negative values lighten them.
 }
-\examples{
- barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
-
-}
 \author{
 Karolis Koncevičius
 }

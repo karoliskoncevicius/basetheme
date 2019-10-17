@@ -41,19 +41,14 @@ When \code{x} is not specified - a function that generates colors based on
 \code{pal} and \code{ref} is returned.
 }
 \examples{
+ # iris example
  pairs(iris[,1:4], col=lab2col(iris$Species))
 
- labs1 <- c("A", "B", "C", "D", "E")
- labs2 <- c("D", "C", "E", "A", "B")
- labs3 <- c("A", "A", "C", "F", "B")
- par(mfrow=c(2,2))
- barplot(1:5, names=labs1, col=lab2col(labs1))
- barplot(1:5, names=labs2, col=lab2col(labs2, ref=labs1))                # color orders are preserved
- barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1))                # new levels are treated as missing
- barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1, NAcol="black")) # "missing" color can be adjusted
+ # iris example with one group missing from reference
+ pairs(iris[,1:4], col=lab2col(iris$Species, ref=c("setosa", "versicolor")))
 
  # example of using a coloring function
- # the "color" function created below will always know what colors to assign to the values provided in the "ref"
+ # "color" function below will consistently assign colors to values in "ref".
  color <- lab2col(ref=unique(chickwts$feed))
  par(mfrow=c(1,2))
  means <- tapply(chickwts$weight, chickwts$feed, mean)
