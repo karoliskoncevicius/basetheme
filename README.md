@@ -49,7 +49,7 @@ A few examples using of how it all works together.
 | Colored by scale (theme = royal)                                       |  Colored by label (theme = deepblue)                                   |
 |------------------------------------------------------------------------|------------------------------------------------------------------------|
 | `basetheme("royal")`                                                   | `basetheme("deepblue")`                                                |
-| `pairs(iris[-5], bg=num2col(iris$Sepal.Width), col=0)`                 | `pairs(iris[-5], bg=lab2col(iris$Species), col=0)`                     |
+| `pairs(iris[-5], bg=num2col(iris$Sepal.Len), col=0)`                   | `pairs(iris[-5], bg=lab2col(iris$Species), col=0)`                     |
 | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1_2.png)  |
 
 | Dendrogram (theme = brutal)                                            |  Dendrogram (theme = ink)                                              |
@@ -64,10 +64,10 @@ A few examples using of how it all works together.
 | `barplot(rivers, col=num2col(rivers))`                                 | `barplot(rivers, col=num2col(rivers, ref=1:1000))`                     |
 | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3_2.png)  |
 
-| Density plot (theme = minimal)                                         |  Density plot (theme = void)                                           |
+| Scatter plot (theme = minimal)                                         |  Scatter plot (theme = void)                                           |
 |------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `basetheme("minimal")`                                                 | `basetheme("void")`                                                    |
-| `plot(density(iris$Petal.Length))`                                     | `plot(density(iris$Petal.Length))`                                     |
+| `basetheme("clean")`                                                   | `basetheme("void")`                                                    |
+| `plot(1:10, col=num2col(1:10, "red"), cex=2)`                          | `plot(1:10, col=num2col(1:10, "red"), cex=2)`                          |
 | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_4_2.png)  |
 
 ## More Details ##
