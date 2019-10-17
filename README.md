@@ -49,7 +49,7 @@ A few examples using of how it all works together.
 | Colored by scale (theme = royal)                                       |  Colored by label (theme = deepblue)                                   |
 |------------------------------------------------------------------------|------------------------------------------------------------------------|
 | `basetheme("royal")`                                                   | `basetheme("deepblue")`                                                |
-| `pairs(iris[1:4], bg=num2col(iris$Sepal.Width), col=0)`                | `pairs(iris[1:4], bg=lab2col(iris$Species), col=0)`                    |
+| `pairs(iris[-5], bg=num2col(iris$Sepal.Width), col=0)`                 | `pairs(iris[-5], bg=lab2col(iris$Species), col=0)`                     |
 | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1_1.png)  | ![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_1_2.png)  |
 
 | Dendrogram (theme = brutal)                                            |  Dendrogram (theme = ink)                                              |
