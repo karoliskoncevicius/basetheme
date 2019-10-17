@@ -58,14 +58,14 @@ basetheme("clean")
 barplot(rivers, col=num2col(rivers))
 ```
 
-![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_2.png)
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_2a.png)
 
 ```r
 basetheme("brutal")
 plot(hclust(dist(USArrests), "ward.D2"), hang=-1)
 ```
 
-![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3.png)
+![](http://karolis.koncevicius.lt/data/basetheme/examples/ex_3a.png)
 
 ```r
 basetheme("royal")
