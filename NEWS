@@ -1,6 +1,13 @@
 Package: basetheme
 ==================
 
+Version 0.1.3 [TBD]
+
+IMPROVEMENTS
+
+ * Missing color in 'num2col' and 'lab2col' was set to grey in all themes
+
+
 Version 0.1.2 [2019-10-17]
 
 NEW FEATURES
