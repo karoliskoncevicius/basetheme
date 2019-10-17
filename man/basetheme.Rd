@@ -47,14 +47,14 @@ The parameters set by this function will take presedence over \code{par()} param
   basetheme("dark")
   plot(1)
 
-  # Reset theme
-  basetheme(NULL)
-
   # Set theme by list
   theme <- basetheme("clean")
   theme$rect.col <- "grey90"
   basetheme(theme)
   pairs(iris[,1:4], col=iris$Species)
+
+  # Reset theme
+  basetheme(NULL)
 
 }
 \author{
