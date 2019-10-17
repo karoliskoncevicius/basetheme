@@ -52,14 +52,18 @@ When \code{x} is not specified - a function that generates colors based on
  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1))                # new levels are treated as missing
  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1, NAcol="black")) # "missing" color can be adjusted
 
- ref <- sort(unique(mtcars$cyl))
- col <- c("pink", "red", "darkred")
- plot(mtcars$hp, mtcars$mpg, col=lab2col(mtcars$cyl, col, ref), pch=19)
- legend("topright", legend=ref, fill=col, title="cylinders")
+ # example of using a coloring function
+ # the "color" function created below will always know what colors to assign to the values provided in the "ref"
+ color <- lab2col(ref=unique(chickwts$feed))
+ par(mfrow=c(1,2))
+ means <- tapply(chickwts$weight, chickwts$feed, mean)
+ barplot(means, col=color(names(means)), las=2)
+ means <- sample(means)
+ barplot(means, col=color(names(means)), las=2)
 
 }
 \seealso{
-\code{lab2col}
+\code{num2col}
 }
 \author{
 Karolis Koncevičius

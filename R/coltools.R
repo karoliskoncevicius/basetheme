@@ -31,7 +31,10 @@
 #'  cols <- c("lightblue", "cornflowerblue", "orange", "red")
 #'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
 #'
-#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, c("green", "red")), pch=19, cex=2)
+#'  # using a prepared coloring function (that colors values in the range of 0-10)
+#'  color <- num2col(ref=c(0,10))
+#'  plot(mtcars$hp, mtcars$mtcars, col=color(mtcars$cyl), pch=19)
+#'  legend("topleft", legend=sort(unique(mtcars$cyl)), fill=color(sort(unique(mtcars$cyl))), title="cylinders")
 #'
 #' @seealso \code{lab2col}
 #'
@@ -120,12 +123,16 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 #'  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1))                # new levels are treated as missing
 #'  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1, NAcol="black")) # "missing" color can be adjusted
 #'
-#'  ref <- sort(unique(mtcars$cyl))
-#'  col <- c("pink", "red", "darkred")
-#'  plot(mtcars$hp, mtcars$mpg, col=lab2col(mtcars$cyl, col, ref), pch=19)
-#'  legend("topright", legend=ref, fill=col, title="cylinders")
+#'  # example of using a coloring function
+#'  # the "color" function created below will always know what colors to assign to the values provided in the "ref"
+#'  color <- lab2col(ref=unique(chickwts$feed))
+#'  par(mfrow=c(1,2))
+#'  means <- tapply(chickwts$weight, chickwts$feed, mean)
+#'  barplot(means, col=color(names(means)), las=2)
+#'  means <- sample(means)
+#'  barplot(means, col=color(names(means)), las=2)
 #'
-#' @seealso \code{lab2col}
+#' @seealso \code{num2col}
 #'
 #' @author Karolis Koncevičius
 #' @export

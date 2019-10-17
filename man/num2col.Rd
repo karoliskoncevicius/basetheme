@@ -44,7 +44,10 @@ When \code{x} is not specified - a function that generates colors based on
  cols <- c("lightblue", "cornflowerblue", "orange", "red")
  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
 
- plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, c("green", "red")), pch=19, cex=2)
+ # using a prepared coloring function (that colors values in the range of 0-10)
+ color <- num2col(ref=c(0,10))
+ plot(mtcars$hp, mtcars$mtcars, col=color(mtcars$cyl), pch=19)
+ legend("topleft", legend=sort(unique(mtcars$cyl)), fill=color(sort(unique(mtcars$cyl))), title="cylinders")
 
 }
 \seealso{
