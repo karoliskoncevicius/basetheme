@@ -46,13 +46,11 @@ See documentation: `help(basetheme)`, `help(num2col)`, `help(lab2col)` and examp
 
 A few examples using `iris` dataset for how it all works together.
 
-|--------------------------------------------------------|----------------------------------------------------|
 | Colored by scale (theme = royal)                       |  Colored by label (theme = deepblue)               |
 |--------------------------------------------------------|----------------------------------------------------|
 | basetheme("royal")                                     | basetheme("deepblue")                              |
 | pairs(iris[,1:4], bg=num2col(iris$Sepal.Width), col=0) | pairs(iris[,1:4], bg=lab2col(iris$Species), col=0) |
 | ![](https://camo.githubusercontent.com/97ac10e27e48e4482312d5fda34910736dc18393/687474703a2f2f6b61726f6c69732e6b6f6e63657669636975732e6c742f646174612f626173657468656d652f62727574616c2e706e67)                                                  | ![](https://camo.githubusercontent.com/97ac10e27e48e4482312d5fda34910736dc18393/687474703a2f2f6b61726f6c69732e6b6f6e63657669636975732e6c742f646174612f626173657468656d652f62727574616c2e706e67)                                              |
-|--------------------------------------------------------|----------------------------------------------------|
 
 ## More Details ##
 
