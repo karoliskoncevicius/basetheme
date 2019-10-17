@@ -9,7 +9,7 @@ colshade(cols, frac = 0)
 \arguments{
 \item{cols}{a vector of colors}
 
-\item{frac}{a vector of shade fraction (between -1 and 1, defaults to 0)}
+\item{frac}{a vector of shade fractions (between -1 and 1, defaults to 0)}
 }
 \value{
 a vector of colors with added shades or tints.
@@ -23,7 +23,7 @@ Shade or tint is decided depending on the sign of the \code{frac} argument:
 positive values make colors darker and negative values lighten them.
 }
 \examples{
-  barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
+ barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
 
 }
 \author{

@@ -1,33 +1,32 @@
-#' Numeric Vector to Color
+#' Numbers to Colors
 #'
-#' Returns interpolated colors for a specified numeric vector.
+#' Assigns colors to the provided vector of numbers.
 #'
 #' This function interpolates a given set of colors to a numeric vector.
 #' Main use case is in turning numbers into colors for plots,
-#' especially when different ranges of \code{x} has to be colored differently.
+#' especially when different ranges of \code{x} have to be colored differently.
 #'
-#' Color of NA values and values outside of specified interval can be set using
+#' Color of NA values and values outside of \code{ref} range can be set using
 #' \code{NAcol} argument. Set this to NA to omit the display of such values.
 #'
 #' @param x numeric vector (factors are transformed to numeric)
-#' @param ... colors to build palette from (defaults to jet colors)
-#' @param NAcol color to be used for NA values (defaults to grey)
-#' @param min lowest value of transformed vector (defaults to \code{min(x)})
-#' @param max highest value of transformed vector (defaults to \code{max(x)})
+#' @param pal colors used to build the palette (defaults to colros set by theme)
+#' @param ref reference for assigning colors (defaults to the range of \code{x})
+#' @param NAcol color to be used for NA values (defaults to color set by theme)
 #'
 #' @return a vector of colors for each element in x.
 #'
 #' @examples
-#'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
 #'
-#'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, min=20), pch=19, cex=2)
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20, 35)), pch=19, cex=2)
 #'
-#'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, min=20, NAcol=NA), pch=19, cex=2)
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, ref=c(20,35), NAcol=NA), pch=19, cex=2)
 #'
-#'   cols <- c("lightblue", "cornflowerblue", "orange", "red")
-#'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
+#'  cols <- c("lightblue", "cornflowerblue", "orange", "red")
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, cols), pch=19, cex=2)
 #'
-#'   plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, "green", "red"), pch=19, cex=2)
+#'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, c("green", "red")), pch=19, cex=2)
 #'
 #' @author Karolis Koncevičius
 #' @export
@@ -61,6 +60,72 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
   cols
 }
 
+#' Labels to Colors
+#'
+#' Assigns colors to the provided vector of labels.
+#'
+#' This function assigns colors to each unique level of label vector \code{x}.
+#' Mainly used for consistently assigning colors to a unique set of labels,
+#' especially when the order of original labels might change (see examples).
+#'
+#' Color of NA values and values outside of specified reference can be set using
+#' \code{NAcol} argument. Set this to NA to omit the display of such values.
+#'
+#' \code{ref} parameter can be specified to select the order of color assignment:
+#' first element from \code{ref} will be assigned the first color from \code{pal},
+#' second element - second color, and so on.
+#'
+#' @param x vector of labels (always transformed to character)
+#' @param pal colors used to build the palette (defaults to colors set by theme)
+#' @param ref reference for assigning colors (defaults to elements of \code{x})
+#' @param NAcol color to be used for NA values (defaults to color set by theme)
+#'
+#' @return a vector of colors for each element in x.
+#'
+#' @examples
+#'  pairs(iris[,1:4], col=lab2col(iris$Species))
+#'
+#'  labs1 <- c("A", "B", "C", "D", "E")
+#'  labs2 <- c("D", "C", "E", "A", "B")
+#'  labs3 <- c("A", "A", "C", "F", "B")
+#'  par(mfrow=c(2,2))
+#'  barplot(1:5, names=labs1, col=lab2col(labs1))
+#'  barplot(1:5, names=labs2, col=lab2col(labs2, ref=labs1))                # color orders are preserved
+#'  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1))                # new levels are treated as missing
+#'  barplot(1:5, names=labs3, col=lab2col(labs3, ref=labs1, NAcol="black")) # "missing" color can be adjusted
+#'
+#'  ref <- sort(unique(mtcars$cyl))
+#'  col <- c("pink", "red", "darkred")
+#'  plot(mtcars$hp, mtcars$mpg, col=lab2col(mtcars$cyl, col, ref), pch=19)
+#'  legend("topright", legend=ref, fill=col, title="cylinders")
+#'
+#' @author Karolis Koncevičius
+#' @export
+lab2col <- function(x, pal, ref=x, NAcol) {
+  if(is.numeric(x)) x <- as.character(x)
+
+  if(missing(pal)) {
+    pal <- basetheme()$palette.labels
+  }
+  if(is.null(pal)) {
+    pal <- c("#5DA5DA", "#FAA43A", "#60BD68", "#F15854", "#B276B2", "#8D4B08", "#DECF3F", "#F17CB0", "#66E3D9", "#00FF7F")
+  }
+
+  if(missing(NAcol)) {
+    NAcol <- basetheme()$palette.missing
+  }
+  if(is.null(NAcol)) {
+    NAcol <- "#B9BBB6"
+  }
+
+  vals <- unique(ref)
+  pal  <- rep_len(pal, length(vals))
+  cols <- pal[match(x, vals)]
+
+  cols[is.na(cols)] <- NAcol
+  cols
+}
+
 
 #' Add Shade to Color
 #'
@@ -71,12 +136,12 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 #' positive values make colors darker and negative values lighten them.
 #'
 #' @param cols a vector of colors
-#' @param frac a vector of shade fraction (between -1 and 1, defaults to 0)
+#' @param frac a vector of shade fractions (between -1 and 1, defaults to 0)
 #'
 #' @return a vector of colors with added shades or tints.
 #'
 #' @examples
-#'   barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
+#'  barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
 #'
 #' @author Karolis Koncevičius
 #' @export
