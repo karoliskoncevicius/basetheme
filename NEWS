@@ -6,11 +6,11 @@ Version 0.1.2 [TBD]
 NEW FEATURES
 
  * Function 'num2col' for turning numbers into colors.
- * Function 'colshade' for adding shades and tints to colors.
+ * Function 'lab2col' for turning labels into colors.
 
 IMPROVEMENTS
 
- * Implemented consistent 999-color palettes for all themes.
+ * Implemented consistent color palettes for all themes.
 
 BUG FIXES
 
