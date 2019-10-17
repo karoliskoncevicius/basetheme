@@ -15,7 +15,7 @@ colshade(cols, frac = 0)
 a vector of colors with added shades or tints.
 }
 \description{
-Adds a selected ammount of shade or tint to a vector of colors.
+Adds a selected amount of shade or tint to a vector of colors.
 }
 \details{
 This function adds shades and tints to provided list of colors.

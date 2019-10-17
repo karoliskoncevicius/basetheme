@@ -11,12 +11,15 @@
 #'
 #' In case only a single color is provided - it is expanded by using tints and shades.
 #'
+#' When \code{x} is not specified - a function that generates colors based on
+#' \code{pal} and \code{ref} is returned.
+#'
 #' @param x numeric vector (factors are transformed to numeric)
-#' @param pal colors used to build the palette (defaults to colros set by theme)
+#' @param pal colors used to build the palette (defaults to colors set by theme)
 #' @param ref reference for assigning colors (defaults to the range of \code{x})
 #' @param NAcol color to be used for NA values (defaults to color set by theme)
 #'
-#' @return a vector of colors for each element in x.
+#' @return a vector of colors for each element in \code{x} or, when \code{x} is missing, a function.
 #'
 #' @examples
 #'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
@@ -30,11 +33,11 @@
 #'
 #'  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, c("green", "red")), pch=19, cex=2)
 #'
+#' @seealso \code{lab2col}
+#'
 #' @author Karolis Koncevičius
 #' @export
 num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
-  if(is.factor(x)) x <- as.numeric(x)
-
   if(missing(pal)) {
     pal <- basetheme()$palette.numbers
   }
@@ -53,17 +56,27 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
     NAcol <- "#B9BBB6"
   }
 
+  ramp <- colorRamp(pal)
   min <- min(ref, na.rm=TRUE)
   max <- max(ref, na.rm=TRUE)
-  x[x < min | x > max] <- NA
-  x <- x - min
-  x <- x / (max-min)
 
-  ramp <- colorRamp(pal)
-  cols <- x
-  cols[] <- NAcol
-  cols[!is.na(x)] <- rgb(ramp(x[!is.na(x)]), maxColorValue=255)
-  cols
+  fun <- function(x) {
+    if(is.factor(x)) x <- as.numeric(x)
+    x[x < min | x > max] <- NA
+    x <- x - min
+    x <- x / (max-min)
+
+    cols <- x
+    cols[] <- NAcol
+    cols[!is.na(x)] <- rgb(ramp(x[!is.na(x)]), maxColorValue=255)
+    cols
+  }
+
+  if(missing(x)) {
+    fun
+  } else {
+    fun(x)
+  }
 }
 
 #' Labels to Colors
@@ -85,12 +98,15 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 #' tints. However if the number of groups exceeds the number of provided colors
 #' by more than 3 times the colors will be repeated.
 #'
+#' When \code{x} is not specified - a function that generates colors based on
+#' \code{pal} and \code{ref} is returned.
+#'
 #' @param x vector of labels (always transformed to character)
 #' @param pal colors used to build the palette (defaults to colors set by theme)
 #' @param ref reference for assigning colors (defaults to elements of \code{x})
 #' @param NAcol color to be used for NA values (defaults to color set by theme)
 #'
-#' @return a vector of colors for each element in x.
+#' @return a vector of colors for each element in \code{x} or, when \code{x} is missing, a function.
 #'
 #' @examples
 #'  pairs(iris[,1:4], col=lab2col(iris$Species))
@@ -109,11 +125,11 @@ num2col <- function(x, pal, ref=range(x, na.rm=TRUE), NAcol) {
 #'  plot(mtcars$hp, mtcars$mpg, col=lab2col(mtcars$cyl, col, ref), pch=19)
 #'  legend("topright", legend=ref, fill=col, title="cylinders")
 #'
+#' @seealso \code{lab2col}
+#'
 #' @author Karolis Koncevičius
 #' @export
 lab2col <- function(x, pal, ref=x, NAcol) {
-  if(is.numeric(x)) x <- as.character(x)
-
   if(missing(pal)) {
     pal <- basetheme()$palette.labels
   }
@@ -135,16 +151,26 @@ lab2col <- function(x, pal, ref=x, NAcol) {
   if(length(vals) > length(pal))
     warning("number of unique values exceeds the number of colors in the palette by more than 3 times")
   pal  <- rep_len(pal, length(vals))
-  cols <- pal[match(x, vals)]
 
-  cols[is.na(cols)] <- NAcol
-  cols
+  fun <- function(x) {
+    if(is.numeric(x)) x <- as.character(x)
+
+    cols <- pal[match(x, vals)]
+    cols[is.na(cols)] <- NAcol
+    cols
+  }
+
+  if(missing(x)) {
+    fun
+  } else {
+    fun(x)
+  }
 }
 
 
 #' Add Shade to Color
 #'
-#' Adds a selected ammount of shade or tint to a vector of colors.
+#' Adds a selected amount of shade or tint to a vector of colors.
 #'
 #' This function adds shades and tints to provided list of colors.
 #' Shade or tint is decided depending on the sign of the \code{frac} argument:
@@ -159,7 +185,6 @@ lab2col <- function(x, pal, ref=x, NAcol) {
 #'  barplot(1:11, col=colshade("red", frac=seq(-1,1,0.2)))
 #'
 #' @author Karolis Koncevičius
-#' @export
 colshade <- function(cols, frac=0) {
   if(any(frac < -1 | frac > 1)) stop('"frac" must be between -1 and 1')
   if(length(frac) <= length(cols)) {

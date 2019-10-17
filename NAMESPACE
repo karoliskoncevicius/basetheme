@@ -1,2 +1,3 @@
 export(basetheme)
 export(num2col)
+export(lab2col)

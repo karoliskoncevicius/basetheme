@@ -9,14 +9,14 @@ num2col(x, pal, ref = range(x, na.rm = TRUE), NAcol)
 \arguments{
 \item{x}{numeric vector (factors are transformed to numeric)}
 
-\item{pal}{colors used to build the palette (defaults to colros set by theme)}
+\item{pal}{colors used to build the palette (defaults to colors set by theme)}
 
 \item{ref}{reference for assigning colors (defaults to the range of \code{x})}
 
 \item{NAcol}{color to be used for NA values (defaults to color set by theme)}
 }
 \value{
-a vector of colors for each element in x.
+a vector of colors for each element in \code{x} or, when \code{x} is missing, a function.
 }
 \description{
 Assigns colors to the provided vector of numbers.
@@ -30,6 +30,9 @@ Color of NA values and values outside of \code{ref} range can be set using \code
 Set this to NA to omit the display of such values.
 
 In case only a single color is provided - it is expanded by using tints and shades.
+
+When \code{x} is not specified - a function that generates colors based on
+\code{pal} and \code{ref} is returned.
 }
 \examples{
  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg), pch=19, cex=2)
@@ -43,6 +46,9 @@ In case only a single color is provided - it is expanded by using tints and shad
 
  plot(mtcars$hp, mtcars$mpg, col=num2col(mtcars$mpg, c("green", "red")), pch=19, cex=2)
 
+}
+\seealso{
+\code{lab2col}
 }
 \author{
 Karolis Koncevičius

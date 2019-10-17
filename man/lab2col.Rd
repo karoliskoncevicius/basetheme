@@ -16,7 +16,7 @@ lab2col(x, pal, ref = x, NAcol)
 \item{NAcol}{color to be used for NA values (defaults to color set by theme)}
 }
 \value{
-a vector of colors for each element in x.
+a vector of colors for each element in \code{x} or, when \code{x} is missing, a function.
 }
 \description{
 Assigns colors to the provided vector of labels.
@@ -36,6 +36,9 @@ second element - second color, and so on.
 The list of provided colors is expanded by first adding shades and then adding
 tints. However if the number of groups exceeds the number of provided colors
 by more than 3 times the colors will be repeated.
+
+When \code{x} is not specified - a function that generates colors based on
+\code{pal} and \code{ref} is returned.
 }
 \examples{
  pairs(iris[,1:4], col=lab2col(iris$Species))
@@ -54,6 +57,9 @@ by more than 3 times the colors will be repeated.
  plot(mtcars$hp, mtcars$mpg, col=lab2col(mtcars$cyl, col, ref), pch=19)
  legend("topright", legend=ref, fill=col, title="cylinders")
 
+}
+\seealso{
+\code{lab2col}
 }
 \author{
 Karolis Koncevičius
