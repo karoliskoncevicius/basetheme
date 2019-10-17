@@ -29,7 +29,7 @@ get_theme <- function(theme=NULL) {
 # function to set par settings
 setParFun <- function(plist) {
   parList <- plist
-  parList$palette <- NULL
+  parList[grep("^palette\\.?", names(parList))] <- NULL
   parList[grep("^rect\\.", names(parList))] <- NULL
   function(set=TRUE) {
     if(set) {
@@ -79,3 +79,4 @@ setRecFun <- function(plist) {
     NULL
   }
 }
+
