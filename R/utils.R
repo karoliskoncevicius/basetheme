@@ -45,6 +45,9 @@ setParFun <- function(plist) {
 setPalFun <- function(plist) {
   plist <- plist[grep("^palette\\.?", names(plist))]
   if(!is.null(plist$palette)) {
+    cur_dev <- dev.cur()
+    grDevices::palette(value=plist$palette)
+    if(cur_dev==1) dev.off()
     function(set=TRUE) {
       if(set)
         grDevices::palette(value=plist$palette)
