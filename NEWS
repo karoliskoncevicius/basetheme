@@ -5,7 +5,7 @@ Version 0.1.3 [TBD]
 
 BUG FIXES
 
-* Palette is now set immediately after applying the theme.
+* Theme palette is now set immediately instead of waiting for the first plot.
 
 IMPROVEMENTS
 
