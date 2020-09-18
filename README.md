@@ -97,10 +97,10 @@ persp(x, y, z, theta=-45)
 
 Additional details can be found in the Wiki pages:
 
-1. [List of Available Themes](https://github.com/KKPMW/basetheme/wiki/Theme-List)
-2. [Creating Custom Themes](https://github.com/KKPMW/basetheme/wiki/Creating-Themes)
-3. [Installation Instructions](https://github.com/KKPMW/basetheme/wiki/Installation)
-4. [Implementation Details](https://github.com/KKPMW/basetheme/wiki/Implementation-Details)
+1. [List of Available Themes](https://github.com/karoliskoncevicius/basetheme/wiki/Theme-List)
+2. [Creating Custom Themes](https://github.com/karoliskoncevicius/basetheme/wiki/Creating-Themes)
+3. [Installation Instructions](https://github.com/karoliskoncevicius/basetheme/wiki/Installation)
+4. [Implementation Details](https://github.com/karoliskoncevicius/basetheme/wiki/Implementation-Details)
 
 ## See Also ##
 
