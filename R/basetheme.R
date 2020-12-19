@@ -61,9 +61,7 @@ basetheme <- function(...) {
 
   if(names(pars)[1] == "") {
     if(is.null(pars[[1]])) {
-      cur_dev <- dev.cur()
       grDevices::palette("default")
-      if(cur_dev == 1) dev.off()
       oldpars <- list()
       pars <- pars[-1]
     } else if(is.list(pars[[1]])) {
