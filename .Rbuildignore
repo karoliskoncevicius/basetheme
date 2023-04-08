@@ -1,0 +1,5 @@
+meta
+.github
+^\.travis\.yml$
+README.md
+
